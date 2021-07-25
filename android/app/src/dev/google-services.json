@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "284084863679",
+    "firebase_url": "https://zampi-notifications.firebaseio.com",
+    "project_id": "zampi-notifications",
+    "storage_bucket": "zampi-notifications.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:284084863679:android:09db1d0325f14b298f3c0a",
+        "android_client_info": {
+          "package_name": "com.zampi.app.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "284084863679-hu1fmn7qcjc5aktvc7gm2pfkdkig75uc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zampi.app.dev",
+            "certificate_hash": "b78a4ca8b323cd22e41da82255b60095cfe992f0"
+          }
+        },
+        {
+          "client_id": "284084863679-g892baqr0adbgjrrnnk27irp7f4ilcb8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBX6Xh3UuGDKQ5mQcM_QJUOv_vWRpEs3XA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "284084863679-g892baqr0adbgjrrnnk27irp7f4ilcb8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "284084863679-9cflau667p7ctgihe5erpgfhhjj02tjf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.development.skys.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
