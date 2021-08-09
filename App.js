@@ -54,26 +54,26 @@ export const callKeepOptions = {
 };
 
 // Async function that returns Twilio access token
-export async function fetchAccessToken() {
-  console.log('fetchAccessToken called');
-  if (!global.userEmailId)
-    return showAlert('Email Missing');
-  const identity = global.userEmailId;
-  var phoneNumber = '7598198955'
-  if (identity == 'nijaahnandhrv@digisenz.com')
-    phoneNumber = '7598198955';
-  else if (identity == 'gopim@digisenz.com')
-    phoneNumber = '9195990852';
-  else
-    showAlert('Couldnt find email so fetching token with default number. Check fetchAccessToken method in app.js', null, 'top');
+// export async function fetchAccessToken() {
+//   console.log('fetchAccessToken called');
+//   if (!global.userEmailId)
+//     return showAlert('Email Missing');
+//   const identity = global.userEmailId;
+//   var phoneNumber = '7598198955'
+//   if (identity == 'nijaahnandhrv@digisenz.com')
+//     phoneNumber = '7598198955';
+//   else if (identity == 'gopim@digisenz.com')
+//     phoneNumber = '9195990852';
+//   else
+//     showAlert('Couldnt find email so fetching token with default number. Check fetchAccessToken method in app.js', null, 'top');
 
-  const response = await fetch(
-    `https://access-token-2848.twil.io/access-token?identity=${phoneNumber}`
-  );
-  const accessToken = await response.text();
-  console.log('Twilio Voice Token==> ', accessToken, '\nTwilio Voice Response==> ', response);
-  return accessToken;
-}
+//   const response = await fetch(
+//     `https://access-token-2848.twil.io/access-token?identity=${phoneNumber}`
+//   );
+//   const accessToken = await response.text();
+//   console.log('Twilio Voice Token==> ', accessToken, '\nTwilio Voice Response==> ', response);
+//   return accessToken;
+// }
 
 // RNTwilioPhone options
 export const twilioCallOptions = {

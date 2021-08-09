@@ -17,6 +17,7 @@ const mapStateToProps = state => ({
 });
 
 
+
 const emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 const enhance = compose(
@@ -81,7 +82,7 @@ const enhance = compose(
       var data = global.userInfo;
       // data.tos = { url: strings['TNC_TermsConditionsURL'], version: strings['TNC_TermsConditionsVersion'], acceptedDate: +new Date() }
       setLoader({ isLoading: true, message: strings['LoaderCreatingAccount'] });
-      await firebase.auth().createUserWithEmailAndPassword(email, password).then(function (credentials) {
+      await firebase.auth.createUserWithEmailAndPassword(email, password).then(function (credentials) {
         createAccount({
           userId: credentials.user.uid,
           data: data,
@@ -136,16 +137,16 @@ const enhance = compose(
     isValidPassword: !!password && password.length > 7
   })),
 
-  lifecycle({
-    componentDidMount() {
-      this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', () => { Platform.OS == 'android' ? this.props.setViewPaddingBottom(360) : this.props.setViewPaddingBottom(320) });
-      this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', () => { this.props.setViewPaddingBottom(0) });
-    },
-    componentWillUnmount() {
-      this.keyboardDidShowListener.remove();
-      this.keyboardDidHideListener.remove();
-    }
-  })
+  // lifecycle({
+  //   componentDidMount() {
+  //     this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', () => { Platform.OS == 'android' ? this.props.setViewPaddingBottom(360) : this.props.setViewPaddingBottom(320) });
+  //     this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', () => { this.props.setViewPaddingBottom(0) });
+  //   },
+    // componentWillUnmount() {
+    //   this.keyboardDidShowListener.remove();
+    //   this.keyboardDidHideListener.remove();
+    // }
+  // })
 );
 
 export default hoistStatics(enhance)(Signup);

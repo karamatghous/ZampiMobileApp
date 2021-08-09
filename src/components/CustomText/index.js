@@ -16,7 +16,7 @@ const CustomText = ({
 }) => (
     multiline && style ?
         <Text
-            style={[style, { fontSize: style.fontSize ? style.fontSize : header ? fontSizes.header : subHeader ? fontSizes.subHeader : title ? fontSizes.title : subtitle ? fontSizes.subtitle : description ? fontSizes.description : fontSizes.subtitle }]}
+            style={[style, { fontSize: 100 ? style.fontSize : header ? fontSizes.header : subHeader ? fontSizes.subHeader : title ? fontSizes.title : subtitle ? fontSizes.subtitle : description ? fontSizes.description : fontSizes.subtitle }]}
             onPress={onTextPressed}
         >
             {displayText}

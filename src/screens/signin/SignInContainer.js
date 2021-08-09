@@ -18,36 +18,34 @@ import { showAlert } from "../../components/ToastAlert";
 
 const emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
-<<<<<<< HEAD
-=======
-const callKeepOptions = {
-  ios: {
-    appName: appName,
-    supportsVideo: false,
-  },
-  android: {
-    alertTitle: 'Permissions required',
-    alertDescription: 'This application needs to access your phone accounts',
-    cancelButton: 'Cancel',
-    okButton: 'OK',
-    additionalPermissions: [],
-    // Required to get audio in background when using Android 11
-    foregroundService: {
-      channelId: 'com.example.reactnativetwiliophone',
-      channelName: 'Foreground service for my app',
-      notificationTitle: 'My app is running on background',
-    },
-  },
-};
+// const callKeepOptions = {
+//   ios: {
+//     appName: appName,
+//     supportsVideo: false,
+//   },
+//   android: {
+//     alertTitle: 'Permissions required',
+//     alertDescription: 'This application needs to access your phone accounts',
+//     cancelButton: 'Cancel',
+//     okButton: 'OK',
+//     additionalPermissions: [],
+//     // Required to get audio in background when using Android 11
+//     foregroundService: {
+//       channelId: 'com.example.reactnativetwiliophone',
+//       channelName: 'Foreground service for my app',
+//       notificationTitle: 'My app is running on background',
+//     },
+//   },
+// };
 
 
 
 // RNTwilioPhone options
-const options = {
-  requestPermissionsOnInit: true, // Default: true - Set to false if you want to request permissions manually
-};
+// const options = {
+//   requestPermissionsOnInit: true, // Default: true - Set to false if you want to request permissions manually
+// };
 
->>>>>>> call issue fix
+
 const mapStateToProps = state => ({
     stateAuth: state.auth,
     loader: state.loader || {}
@@ -72,13 +70,8 @@ const enhance = compose(
                     setSignInFailureAttempts();
                     getAccount({ userId: user.uid, data: global.userInfo, isNewUser: credentials.additionalUserInfo.isNewUser }, function (result) {
                         global.userEmailId = result.email;
-<<<<<<< HEAD
-                        RNTwilioPhone.initialize(callKeepOptions, fetchAccessToken, twilioCallOptions);
-                        RNTwilioPhone.initializeCallKeep(callKeepOptions, fetchAccessToken, twilioCallOptions);
-=======
                      //   RNTwilioPhone.initialize(callKeepOptions, fetchAccessToken, options);
                       //  RNTwilioPhone.initializeCallKeep(callKeepOptions, fetchAccessToken, options);
->>>>>>> call issue fix
                         // fetch and send token to server
                         fetchAndUpdateFCMToken(function (token) {
                             if (token)

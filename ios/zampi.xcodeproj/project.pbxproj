@@ -17,6 +17,7 @@
 		C1C4B862D5833EC9F4A929E4 /* libPods-zampi-dev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B217DCC5EE7CF3C1899F01 /* libPods-zampi-dev.a */; };
 		CD37F5F326A5461F00F76477 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD37F5F226A5461F00F76477 /* GoogleService-Info.plist */; };
 		CD3B1E2026A1D19B00A02FDA /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3B1E1E26A1D19B00A02FDA /* File.swift */; };
+		E5A77C9226BCFFA100F64A22 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A77C9126BCFFA100F64A22 /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		CD3B1E1E26A1D19B00A02FDA /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		CD3B1E2126A1D5B100A02FDA /* libreact-native-twilio-phone.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libreact-native-twilio-phone.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD3B1E2326A1D5BA00A02FDA /* libreact-native-track-player.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libreact-native-track-player.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5A77C9126BCFFA100F64A22 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		EA971EA4FD1514B9730D8F27 /* Pods-zampi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zampi.release.xcconfig"; path = "Target Support Files/Pods-zampi/Pods-zampi.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FDF57C28C6217CBA2577A62E /* Pods-zampi-zampi-dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zampi-zampi-dev.release.xcconfig"; path = "Target Support Files/Pods-zampi-zampi-dev/Pods-zampi-zampi-dev.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				E5A77C9126BCFFA100F64A22 /* File.swift */,
 				13B07FAE1A68108700A75B9A /* zampi */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* zampiTests */,
@@ -241,7 +244,7 @@
 		};
 		1498C3432641279C00D5CE38 /* Bundle React Native code and images */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -330,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1498C33A2641279C00D5CE38 /* AppDelegate.m in Sources */,
+				E5A77C9226BCFFA100F64A22 /* File.swift in Sources */,
 				CD3B1E2026A1D19B00A02FDA /* File.swift in Sources */,
 				1498C33C2641279C00D5CE38 /* main.m in Sources */,
 			);
@@ -349,7 +353,8 @@
 				CURRENT_PROJECT_VERSION = 102;
 				DEVELOPMENT_TEAM = ZYQ43T3L67;
 				ENABLE_BITCODE = NO;
-				EXCLUDED_ARCHS = "";
+				EXCLUDED_ARCHS = arm64;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -458,7 +463,7 @@
 				CODE_SIGN_ENTITLEMENTS = zampi/zampi.entitlements;
 				CURRENT_PROJECT_VERSION = 102;
 				DEVELOPMENT_TEAM = ZYQ43T3L67;
-				EXCLUDED_ARCHS = "";
+				EXCLUDED_ARCHS = arm64;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -589,7 +594,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -654,7 +659,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

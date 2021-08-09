@@ -1,0 +1,6 @@
+module react_native_twilio_phone {
+  umbrella header "react-native-twilio-phone-umbrella.h"
+
+  export *
+  module * { export * }
+}

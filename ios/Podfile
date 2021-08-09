@@ -5,7 +5,12 @@ platform :ios, '11.0'
 
 target 'zampi-dev' do
   config = use_native_modules!
-
+  # pod  "@react-native-firebase/app": "^12.4.0",
+  # pod  "@react-native-firebase/auth": "^11.4.1",
+  # pod  "@react-native-firebase/messaging": "^11.4.1",
+  # pod  "@react-native-firebase/remote-config": "^11.4.1",
+  # pod  "@react-native-firebase/storage": "^12.4.0",
+   
   use_react_native!(
     :path => config[:reactNativePath],
     # to enable hermes on iOS, change `false` to `true` and then install pods

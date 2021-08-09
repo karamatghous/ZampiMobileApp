@@ -7,7 +7,6 @@ const initialState = {
   signInFailureAttempts: {},
   FCMToken: {},
 };
-
 const authReducer = handleActions({
   [types.SET_USER]: (state, { payload }) => {
     if (state && state.user && _.isEqual(state.user, payload))

@@ -1,0 +1,6 @@
+module Pods_zampi_dev {
+  umbrella header "Pods-zampi-dev-umbrella.h"
+
+  export *
+  module * { export * }
+}

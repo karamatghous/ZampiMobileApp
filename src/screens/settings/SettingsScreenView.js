@@ -7,6 +7,7 @@ import _ from 'lodash';
 import styles from "./styles";
 import { colors } from "../../styles";
 import { ActionBarMenuTitle, CustomText } from "../../components";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const SettingsScreenView = props => {
   const {
@@ -17,6 +18,11 @@ const SettingsScreenView = props => {
     isNotificationCollapsed,
     onChangeValue
   } = props;
+
+  const onLogOutPress = ()=>{
+    AsyncStorage.removeItem("AUTH_TOKEN");
+    navigation.navigate("SignInScreen");
+  }
 
   const _renderNotificationItem = ({ item, index }) => {
     var paddingRight = 0;
@@ -76,7 +82,7 @@ const SettingsScreenView = props => {
           />
         </Collapsible>
 
-        <TouchableOpacity style={{ paddingTop: 20 }} onPress={onLogout}>
+        <TouchableOpacity style={{ paddingTop: 20 }} onPress={()=> onLogOutPress()}>
           <CustomText
             subHeader
             style={{ paddingHorizontal: 20 }}

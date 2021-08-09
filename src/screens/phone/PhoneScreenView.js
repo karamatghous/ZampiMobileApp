@@ -20,7 +20,7 @@ const PhoneScreenView = props => {
 
     const _renderNumberItem = ({ item, index }) => {
         return (
-            <TouchableOpacity style={{ paddingVertical: 26, width: Dimensions.get('screen').width / 3, alignItems: 'center', justifyContent: 'center' }}
+            <TouchableOpacity style={{ paddingVertical: 26, width: Dimensions.get("screen").width / 3, alignItems: 'center', justifyContent: 'center' }}
                 onPress={() => onNumberPressed(item)}
                 onLongPress={() => onNumberLongPressed(item)}>
                 <CustomText
@@ -69,6 +69,7 @@ const PhoneScreenView = props => {
                             inputContainerStyle={{ borderBottomWidth: 0, height: 50 }}
                             containerStyle={{ borderWidth: 0 }}
                             value={number}
+                            placeholder="please enter number"
                             editable={false}
                             rightIcon={
                                 number.length > 0 ?

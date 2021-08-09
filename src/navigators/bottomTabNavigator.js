@@ -16,7 +16,16 @@ import SettingsContainer from '../screens/settings/SettingsContainer';
 
 const Tab = createBottomTabNavigator();
 
-export function BottomTabNavigator() {
+export function BottomTabNavigator({route,navigation}) {
+
+    // coming from signin screen
+    const auth_token = route.params?.auth_token;
+    const acting_account = route.params?.acting_account;
+    // const navigation=navigation;
+    // console.log(acting_account,"acting_account"); 
+    console.log(auth_token,"auth_token"); 
+
+
     return (
         <Tab.Navigator
             screenOptions={({ route }) => ({
@@ -42,7 +51,11 @@ export function BottomTabNavigator() {
                 showLabel: false,
                 labelStyle: { fontSize: 16, fontWeight: 'bold' }
             }}>
-            <Tab.Screen name="ContactsScreen" component={ContactsContainer} options={{ headerShown: false }} />
+                <Tab.Screen
+          name="ContactsScreen"
+          children={() => <ContactsContainer auth_token={auth_token} acting_account={acting_account} navigation={navigation}/>}
+        />
+            {/* <Tab.Screen name="ContactsScreen" component={ContactsContainer} options={{ headerShown: false }} /> */}
             <Tab.Screen name="PhoneScreen" component={PhoneContainer} options={{ headerShown: false }} />
             <Tab.Screen name="SmsListScreen" component={SmsListContainer} options={{ headerShown: false }} />
             <Tab.Screen name="SettingsScreen" component={SettingsContainer} options={{ headerShown: false }} />

@@ -41,23 +41,27 @@ const enhance = compose(
                 },
             ],
                 { cancelable: false })
-        },
-        onSendSMS: ({ messages, setMessages, route, user }) => (newMessages) => {
-            axios.get(`https://sms-2344.twil.io/send?body=${newMessages[0].text}&to=${route.params.contactDetail.phone}`).then((postMessageResp) => {
-                var data = postMessageResp.data;
-                data.createdAt = data.dateCreated;
-                data.text = data.body;
-                if (!data.user)
-                    data.user = {};
-                data.user._id = data.from ? data.from : '+14048566155';
-                data.user.avatar = user.image;
-                var tMessages = _.clone(messages);
-                tMessages.unshift(data)
-                setMessages(tMessages);
-            }, err => {
-                console.log(err);
-            });
-        }
+        },    
+        // onSendSMS: ({ messages, setMessages, route, user }) => (newMessages) => {
+        //     console.log(newMessages,"new messages");
+        //     axios.get(`https://sms-2344.twil.io/send?body=${newMessages[0].text}&to=${route.params.contactDetail.phone}`).then((postMessageResp) => {
+                
+        //         var data = postMessageResp.data;
+        //         data.createdAt = data.dateCreated;
+        //         data.text = data.body;
+        //         if (!data.user)
+        //             data.user = {};
+        //         data.user._id = data.from ? data.from : '+14048566155';
+        //         data.user.avatar = user.image;
+        //         var tMessages = _.clone(messages);
+        //         tMessages.unshift(data)
+        //         setMessages(tMessages);
+        //     }, err => {
+        //         console.log(err);
+        //     });
+        // }
+
+    
     }),
 
     lifecycle({

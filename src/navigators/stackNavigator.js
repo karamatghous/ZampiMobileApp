@@ -12,7 +12,7 @@ export function StackNavigator() {
     return (
         <Stack.Navigator>
             <Stack.Screen name="TabNavigator" component={BottomTabNavigator} options={{ headerShown: false }} />
-            <Stack.Screen name="ContactDetailScreen" component={ContactDetailContainer} options={{ headerShown: false }} />
+            {/* <Stack.Screen name="ContactDetailScreen" component={ContactDetailContainer} options={{ headerShown: false }} /> */}
             <Stack.Screen name="SmsScreen" component={SmsContainer} options={{ headerShown: false }} />
         </Stack.Navigator>
     )

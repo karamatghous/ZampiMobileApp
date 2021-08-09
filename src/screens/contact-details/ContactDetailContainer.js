@@ -164,17 +164,6 @@ const enhance = compose(
             setContactDetail(contactDetail);
             await TrackPlayer.stop();
         },
-<<<<<<< HEAD
-        onCallPressed: ({ contactDetail, isCallActive, setIsCallActive }) => async () => {
-            var activeCalls = await RNCallKeep.checkIfBusy();
-            if (isCallActive || activeCalls) {
-                setIsCallActive(false);
-                return await RNCallKeep.endAllCalls();
-            }
-            await RNTwilioPhone.startCall(contactDetail.phone);
-            setIsCallActive(true);
-            showAlert('Call Connecting...', 'long');
-=======
         onCallPressed: ({ contactDetail, user }) => async () => {
             const identity = contactDetail.email;
             var phoneNumber = '7598198955'
@@ -188,7 +177,6 @@ const enhance = compose(
             }, (err) => {
                 console.log(err);
             });
->>>>>>> call issue fix
         },
         onMessagePressed: ({ contactDetail, navigation, user }) => (channels, updateChannels) => {
             navigation.navigate('SmsScreen', { contactDetail })

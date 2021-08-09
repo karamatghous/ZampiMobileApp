@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   View,
@@ -16,26 +16,36 @@ import { showAlert } from '../../components/ToastAlert';
 import { strings } from '../../utils/strings';
 import { CustomText, ActionBar } from "../../components";
 
-const SignupScreenView = props => {
-  const {
-    email,
-    onSetEmail,
-    password,
-    onSetPassword,
-    isValidEmail,
-    isValidPassword,
-    onSignupPress,
-    errorMessage,
-    lastName,
-    onSetLastName,
-    firstName,
-    onSetFirstName,
-    navigation,
-    viewPaddingBottom,
-    loader,
-    setShowPassword,
-    showPassword,
-  } = props;
+export default function SignupScreenView  ({navigation}) {
+  // const {
+  //   // email,
+  //   onSetEmail,
+  //   // password,
+  //   onSetPassword,
+  //   isValidEmail,
+  //   isValidPassword,
+  //   // onSignupPress,
+  //   errorMessage,
+  //   // lastName,
+  //   onSetLastName,
+  //   // firstName,
+  //   onSetFirstName,
+  //   navigation,
+  //   viewPaddingBottom,
+  //   loader,
+  //   // setShowPassword,
+  //   // showPassword,
+  // } = props;
+  const [state,setState]=useState({
+    firstName,lastName,email,password,
+
+  });
+  const {firstName,lastName,email,password}=state;
+  const [showPassword,setShowPassword]=useState();
+
+  const updateField = (field) => {
+    setState((prev) => ({...prev, ...field}));
+  };
 
   const FIRST_NAME = strings['Signup_FIRST_NAME_Placeholder'];
   const LAST_NAME = strings['Signup_LAST_NAME_Placeholder'];
@@ -43,14 +53,22 @@ const SignupScreenView = props => {
   const PASSWORD_PLACEHOLDER = strings['Signup_PASSWORD_PLACEHOLDER'];
   const SIGNUP_BUTTON = strings['Signup_SIGNUP_BUTTON'];
 
+  const emailPattern = /^[^\s@]+@[^\s@]+$/;
+  var passwordpattern = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+
+const onSignupPress = ()=>{
+navigation.navigate("DrawerNavigator")
+}
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }} forceInset={{ top: 'always' }}>
       <StatusBar backgroundColor='white' barStyle='dark-content' />
-      <ActionBar
+      {/* <ActionBar
         navigation={navigation}
-      />
+      /> */}
       <ScrollView contentContainerStyle={{ flexGrow: 1, marginHorizontal: 30 }} keyboardShouldPersistTaps='handled'>
-        <View style={{ height: '100%', justifyContent: 'center', paddingBottom: viewPaddingBottom }}>
+        <View style={{ height: '100%', justifyContent: 'center', 
+        // paddingBottom: viewPaddingBottom 
+        }}>
           <View style={{ width: '100%', alignItems: 'center', marginBottom: 20 }}>
             <Image
               style={{ height: 100, width: 150 }}
@@ -60,29 +78,28 @@ const SignupScreenView = props => {
           <Input
             inputStyle={[styles.emailText]}
             inputContainerStyle={{ borderColor: 'transparent', marginTop: 10 }}
-            placeholder={FIRST_NAME}
+            placeholder={"First Name"}
             value={firstName}
-            onChangeText={onSetFirstName}
+            onChangeText={(firstName)=>updateField({firstName})}
             textDecorationLine={Platform.OS == 'android' ? 'transparent' : null}
           />
 
           <Input
             inputStyle={[styles.emailText]}
             inputContainerStyle={{ borderColor: 'transparent', marginTop: 10 }}
-            placeholder={LAST_NAME}
+            placeholder={"Last Name"}
             value={lastName}
-            onChangeText={onSetLastName}
+            onChangeText={(lastName)=>updateField({lastName})}
             textDecorationLine={Platform.OS == 'android' ? 'transparent' : null}
           />
 
           <Input
             inputStyle={[styles.emailText]}
             inputContainerStyle={{ borderColor: 'transparent', marginTop: 10 }}
-            placeholder={LAST_NAME}
+            placeholder={"Email"}
             autoCapitalize='none'
             value={email}
-            onChangeText={onSetEmail}
-            placeholder={EMAIL_PLACEHOLDER}
+            onChangeText={(email)=>updateField({email})}
           />
 
           <Input
@@ -90,10 +107,10 @@ const SignupScreenView = props => {
             secureTextEntry={showPassword ? false : true}
             inputContainerStyle={{ borderColor: 'transparent', marginTop: 10, backgroundColor: styles.emailText.backgroundColor, borderRadius: styles.emailText.borderRadius }}
             value={password}
-            onChangeText={onSetPassword}
+            onChangeText={(password)=>updateField({password})}
             placeholder={PASSWORD_PLACEHOLDER}
             rightIcon={
-              password.length > 0 ?
+              password != null ?
                 <Feather
                   onPress={() => { setShowPassword(!showPassword) }}
                   style={{ marginRight: 10 }}
@@ -103,14 +120,14 @@ const SignupScreenView = props => {
                 : null
             }
           />
-          {errorMessage && errorMessage.message ?
+          {/* {errorMessage && errorMessage.message ?
             <CustomText
               multiline
               style={{ color: colors.red, justifyContent: "center", alignSelf: "center", textAlign: "center", marginTop: 20 }}
               displayText={errorMessage && errorMessage.message}
             />
             : null
-          }
+          } */}
 
           <Button
             titleStyle={{ fontWeight: 'bold', borderRadius: 30 }}
@@ -118,10 +135,10 @@ const SignupScreenView = props => {
             containerStyle={{ marginVertical: 20 }}
             title={SIGNUP_BUTTON}
             onPress={() => {
-              if (firstName.length > 0)
-                if (lastName.length > 0)
-                  if (isValidEmail)
-                    if (isValidPassword)
+              if (firstName != null)
+                if (lastName != null)
+                  if (emailPattern.test(email))
+                    if (passwordpattern.test(password))
                       onSignupPress()
                     else
                       showAlert(strings['Signup_PasswordLengthValidation'], 'short')
@@ -197,4 +214,3 @@ const styles = StyleSheet.create({
   }
 });
 
-export default SignupScreenView;
