@@ -8,7 +8,7 @@ import {
   Modal,
   Platform,
 } from 'react-native';
-import {GiftedChat,Bubble} from 'react-native-gifted-chat';
+import {GiftedChat, Bubble} from 'react-native-gifted-chat';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 const axios = require('axios');
 import _ from 'lodash';
@@ -31,131 +31,69 @@ const SmsScreenView = props => {
     // messages,
     // onSendSMS
   } = props;
-  const newMessage = {};
-  
 
-  // useEffect(async () => {
-  //   setMessages([
-  //     {
-  //       _id: 1,
-  //       text: 'Hello developer',
-  //       createdAt: new Date(),
-  //       user: {
-  //         _id: 2,
-  //         name: 'React Native',
-  //         avatar: 'https://placeimg.com/140/140/any',
-  //       },
-  //     },
-  //   ]);
-  // }, []);
-  // const onSend = useCallback((messages = []) => {
-  //   //   onSendSMS();
-  //   setMessages(previousMessages =>
-  //     GiftedChat.append(previousMessages, messages),
-  //   );
-  // }, []);
   const {contactDetail} = route.params;
   var titleName = contactDetail.phone;
-  console.log(titleName, 'title name');
-  // console.log(props,"props sms screen");
   const [messages, setMessages] = useState([]);
+  const [Allmessages, setAllMessages] = useState([]);
+  const appandMessages = [];
 
-  if (contactDetail && contactDetail.phone)
-    titleName =
-      contactDetail.phone == '+917598198955'
-        ? 'Tony Stark'
-        : contactDetail.phone == '+917373043355'
-        ? 'Peter Parker'
-        : contactDetail.phone == '+919865711001'
-        ? 'Pepper Potts'
-        : contactDetail.phone == '+918870048772'
-        ? 'Steve Rogers'
-        : contactDetail.phone == '+919841246020'
-        ? `T'Challa`
-        : contactDetail.phone == '+919789260652'
-        ? `Thor`
-        : contactDetail.phone == '+19195990852'
-        ? 'Clint Barton'
-        : contactDetail.phone == '+14049394851'
-        ? 'Carol Danvers'
-        : contactDetail.phone;
+  useEffect(async () => {
+    console.log(global.AUTH_TOKEN, 'global');
+    const token = await AsyncStorage.getItem('AUTH_TOKEN');
+    const acting_account = await AsyncStorage.getItem('ACTING_ACCOUNT');
 
-        const [Allmessages, setAllMessages] = useState([]);
+    const allMessages = new FormData();
+    // allMessages.append('auth_token',global.AUTH_TOKEN);
+    allMessages.append('auth_token', token);
+    allMessages.append('acting_account', acting_account);
+    allMessages.append('to', '215');
 
-
-        useEffect(async () => {
-          const token = await AsyncStorage.getItem('AUTH_TOKEN');
-          const allMessages = new FormData();
-          allMessages.append('auth_token', token);
-          allMessages.append('acting_account', '665');
-          allMessages.append('to', '215');
-      
-          fetch('https://beta.zampi.io/Api/fetch_messages', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: allMessages,
-          })
-            .then(response => response.json())
-            .then(json => {
-              setAllMessages(json.data.messages);
-              console.log(json, 'all messages');
-            })
-            .catch(error => {
-              console.error(error);
-            });
-          console.log(Allmessages, 'all messages of state');
-      
-          // fetch(' https://beta.zampi.io/Api/fetch_messages', {
-          //   method: 'POST',
-          //   headers: {
-          //     Accept: 'application/json',
-          //     'Content-Type': 'application/json'
-          //   },
-          //   body: allMessages,
-          // });
-        }, []);
-      
-        const getMappedMessages = () => {
-          return Allmessages
-            ? Allmessages.map(item => {
-                console.log(item, 'item');
-                return {
-                  _id: item.sid,
-                  text: item.message,
-                  createdAt: item.date,
-                  user: {
-                    _id: item.id,
-                    name: "item.sender.username",
-                    avatar: 'https://placeimg.com/140/140/any',
-                  },
-                };
-              })
-            : [];
-            
-        };      
-
-  const onSendSMS = async messages => {
-    const Auth_Token = await AsyncStorage.getItem('AUTH_TOKEN');
-    console.log(Auth_Token, 'auth token Async Storage');
-    console.log(messages, 'messages');
-
-
-     newMessage = {
-      user: {
-        _id: 1,
+    fetch('https://beta.zampi.io/Api/fetch_messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
       },
-        createdAt: Math.floor(Date.now() / 1000),
-        _id: messages[0]._id,
-        text: messages[0].text,
-    };
+      body: allMessages,
+    })
+      .then(response => response.json())
+      .then(json => {
+        setAllMessages(json.data.messages);
+        console.log(json, 'all messages');
+      })
+      .catch(error => {
+        console.error(error);
+      });
+    // console.log(Allmessages, 'all messages of state');
+  }, []);
+
+  const getMappedMessages = () => {
+    return Allmessages
+      ? Allmessages.map(item => {
+          return {
+            _id: item.sid,
+            text: item.message,
+            createdAt: item.date,
+            user: {
+              _id: item.id,
+              name: 'item.sender.username',
+              // avatar: 'https://placeimg.com/140/140/any',
+            },
+          };
+        })
+      : [];
+  };
+  const onSendSMS = async messages => {
+    const token = await AsyncStorage.getItem('AUTH_TOKEN');
+    const acting_account = await AsyncStorage.getItem('ACTING_ACCOUNT');
+
     const formdata = new FormData();
-    formdata.append('auth_token', Auth_Token);
-    formdata.append('acting_account', '665');
+    formdata.append('auth_token', token);
+    formdata.append('acting_account', acting_account);
     formdata.append('to', titleName);
-  
-    formdata.append('message', messages[0].text);
+
+    formdata.append('message', messages);
+    console.log(messages, 'this is gifted chat masg');
     console.log(formdata, 'form data');
     fetch('https://beta.zampi.io/Api/send_sms', {
       method: 'POST',
@@ -166,26 +104,23 @@ const SmsScreenView = props => {
     })
       .then(response => response.json())
       .then(json => {
-        setMessages((prevState) => ([
-          newMessage,
-          ...prevState,
-        ]));
+        // setMessages(prevState => [newMessage, ...prevState]);
         console.log(json, 'sucess');
       })
       .catch(error => {
         return console.log(error, 'error');
       });
   };
-  const renderBubble = (props) => {
+  const renderBubble = props => {
     return (
       <Bubble
         {...props}
         textStyle={{
           right: {
-            color: 'red',
+            color: 'white',
           },
           left: {
-            color: 'red',
+            color: 'white',
           },
         }}
         wrapperStyle={{
@@ -200,7 +135,38 @@ const SmsScreenView = props => {
       />
     );
   };
-  console.log(messages,"state messages");
+  // const onSend = useCallback((messages = []) => {
+  //   console.log(messages,"messages")
+  //   setAllMessages((previousMessages) =>
+  //     GiftedChat.append(previousMessages, {
+
+  //     appandMessages:
+  //         {
+  //         _id: messages[0]._id,
+  //         text: messages[0].text,
+  //         createdAt: new Date(),
+  //         user:{
+  //           _id:messages[0].user._id,
+  //           name:"react native",
+  //           avatar: 'https://placeimg.com/140/140/any',
+  //         }
+  //         }
+  //     }),
+  //   );
+  //   // onSendSMS(messages[0].text);
+  // }, []);
+  const onSend = useCallback((messages = []) => {
+    console.log(messages, 'messages of gifted chat');
+    setAllMessages(previousMessages =>
+      GiftedChat.append(previousMessages, {
+        sid: messages[0]._id,
+        message: messages[0].text,
+        createdAt: new Date(),
+        id: messages[0].user._id,
+      }),
+    );
+    onSendSMS(messages[0].text);
+  }, []);
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
       <StatusBar barStyle="dark-content" backgroundColor={'white'} />
@@ -256,13 +222,13 @@ const SmsScreenView = props => {
             /> */}
       <GiftedChat
         messages={getMappedMessages()}
-        onSend={messages => onSendSMS(messages)}
+        onSend={messages => onSend(messages)}
         user={{
-          _id: 665,
+          _id: 215,
         }}
         renderBubble={renderBubble}
-        loadEarlier={true}
-        avatar={true}
+        // loadEarlier={true}
+        // avatar={false}
       />
     </SafeAreaView>
   );

@@ -10,6 +10,7 @@ const mapStateToProps = state => ({
     user: state.auth.user
 });
 
+
 const enhance = compose(
     connect(mapStateToProps),
 

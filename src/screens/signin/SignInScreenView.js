@@ -127,7 +127,6 @@ export default function SignInScreenView({navigation}) {
                     'AUTH_TOKEN',
                     json.authentication.auth_token,
                   );
-                 
                   fireBase_FCM_Token(
                     fcmToken,
                     json.authentication.auth_token,
