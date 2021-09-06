@@ -10,9 +10,9 @@ const ActionBarMenuTitle = ({
     <View style={{ backgroundColor: 'white', }}>
         <View style={{ flexDirection: 'row', alignItems: 'center', paddingVertical: 14 }}>
             <View style={{ paddingHorizontal: 24 }}>
-                <View style={{ height: 2, backgroundColor: colors.adminColor, width: 10 }} />
+                {/* <View style={{ height: 2, backgroundColor: colors.adminColor, width: 10 }} />
                 <View style={{ height: 2, backgroundColor: colors.adminColor, width: 20, marginVertical: 3 }} />
-                <View style={{ height: 2, backgroundColor: colors.adminColor, width: 14 }} />
+                <View style={{ height: 2, backgroundColor: colors.adminColor, width: 14 }} /> */}
             </View>
             <View style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center' }}>
                 <CustomText

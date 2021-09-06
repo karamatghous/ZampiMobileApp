@@ -27,6 +27,7 @@ import {BottomTabNavigator} from '../../navigators/bottomTabNavigator';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import firebase from '@react-native-firebase/app';
 import messaging from '@react-native-firebase/messaging';
+import {ActivityIndicator} from 'react-native';
 
 export default function SignInScreenView({navigation}) {
   // const {
@@ -57,6 +58,7 @@ export default function SignInScreenView({navigation}) {
     setState(prev => ({...prev, ...field}));
   };
   const [showPassword, setShowPassword] = useState();
+  const [loading, setLoading] = useState(false);
   var passwordpattern = new RegExp(
     '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})',
   );
@@ -77,7 +79,7 @@ export default function SignInScreenView({navigation}) {
     return fetch('https://beta.zampi.io/api/update_fcm', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        // '': 'application/json',
       },
       body: FCM_Token,
     })
@@ -93,84 +95,84 @@ export default function SignInScreenView({navigation}) {
   const onSignInPressed = async () => {
     try {
       if (email != null)
-        // if (password != null)
-        fetch('https://beta.zampi.io/Api/auth', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: formdata,
-        })
-          .then(response => response.json())
-          .then(async json => {
-            if (json.authentication.status == 0) {
-              console.log(json, 'no account error');
-              Toast.show(json.authentication.message, Toast.LONG);
-              return;
-            } else if (
-              json.userdata.fcm_token == null
-              // || json.userdata.fcm_token.length <50
-            ) {
-              firebase
-                .auth()
-                .createUserWithEmailAndPassword(email, password)
-                .then(async response => {
-                  const fcmToken = await messaging().getToken();
-                  if (fcmToken) {
-                    console.log(fcmToken, 'fcmtoken');
-                  }
-                  await AsyncStorage.setItem(
-                    'ACTING_ACCOUNT',
-                    json.userdata.acting_account,
-                  );
-                  await AsyncStorage.setItem(
-                    'AUTH_TOKEN',
-                    json.authentication.auth_token,
-                  );
-                  fireBase_FCM_Token(
-                    fcmToken,
-                    json.authentication.auth_token,
-                    json.userdata.acting_account,
-                  );
-                  console.log(response, 'fire base response');
-                  Toast.show('signed in with firebase', Toast.LONG);
-                  navigation.navigate('TabNavigator', {
-                    auth_token: json.authentication.auth_token,
-                    acting_account: json.userdata.acting_account,
-                    navigation: navigation,
-                  });
-                  return;
-                })
-                .catch(error => {
-                  console.log(error, 'firebase error');
-                });
-            } else {
-              await AsyncStorage.setItem(
-                'ACTING_ACCOUNT',
-                json.userdata.acting_account,
-              );
-              await AsyncStorage.setItem(
-                'AUTH_TOKEN',
-                json.authentication.auth_token,
-              );
-             
-              console.log(json, 'this is signin response');
-              navigation.navigate('TabNavigator', {
-                auth_token: json.authentication.auth_token,
-                acting_account: json.userdata.acting_account,
-                navigation: navigation,
-              });
-            }
+        if (password != null)
+          fetch('https://beta.zampi.io/Api/auth', {
+            method: 'POST',
+            headers: {
+              // '': 'application/json',
+            },
+            body: formdata,
           })
-          .catch(error => {
-            return console.error(error, 'this is error');
-          });
-      // else
-      //   Toast.show(
-      //     'Enter Valid Password \n must have 8 characters 1 upper case one lower case special character and one number ',
-      //     Toast.LONG,
-      //   );
-      else Toast.show('Enter Valid Email', Toast.LONG);
+            .then(response => response.json())
+            .then(async json => {
+              if (json.authentication.status == 0) {
+                console.log(json, 'no account error');
+                Toast.show(json.authentication.message, Toast.LONG);
+                return;
+              } else if (
+                json.userdata.fcm_token == null
+                // || json.userdata.fcm_token.length <50
+              ) {
+                firebase
+                  .auth()
+                  .createUserWithEmailAndPassword(email, password)
+                  .then(async response => {
+                    const fcmToken = await messaging().getToken();
+                    if (fcmToken) {
+                      console.log(fcmToken, 'fcmtoken');
+                    }
+                    await AsyncStorage.setItem(
+                      'ACTING_ACCOUNT',
+                      json.userdata.acting_account,
+                    );
+                    await AsyncStorage.setItem(
+                      'AUTH_TOKEN',
+                      json.authentication.auth_token,
+                    );
+                    fireBase_FCM_Token(
+                      fcmToken,
+                      json.authentication.auth_token,
+                      json.userdata.acting_account,
+                    );
+                    console.log(response, 'fire base response');
+                    Toast.show('signed in with firebase', Toast.LONG);
+                    navigation.navigate('TabNavigator', {
+                      auth_token: json.authentication.auth_token,
+                      acting_account: json.userdata.acting_account,
+                      navigation: navigation,
+                    });
+                    return;
+                  })
+                  .catch(error => {
+                    console.log(error, 'firebase error');
+                  });
+              } else {
+                await AsyncStorage.setItem(
+                  'ACTING_ACCOUNT',
+                  json.userdata.acting_account,
+                );
+                await AsyncStorage.setItem(
+                  'AUTH_TOKEN',
+                  json.authentication.auth_token,
+                );
+
+                console.log(json, 'this is signin response');
+                navigation.navigate('TabNavigator', {
+                  auth_token: json.authentication.auth_token,
+                  acting_account: json.userdata.acting_account,
+                  navigation: navigation,
+                });
+              }
+            })
+            .catch(error => {
+              return console.error(error, 'this is error');
+            });
+        // else
+        //   Toast.show(
+        //     'Enter Valid Password \n must have 8 characters 1 upper case one lower case special character and one number ',
+        //     Toast.LONG,
+        //   );
+        else Toast.show('Enter Valid Email', Toast.LONG);
     } catch (error) {
       console.log(error, 'error');
     }
@@ -178,9 +180,11 @@ export default function SignInScreenView({navigation}) {
   const readToken = async () => {
     try {
       const token = await AsyncStorage.getItem('AUTH_TOKEN');
-      console.log(token, 'this is useeffect');
       if (token !== null) {
+        setLoading(true);
+
         navigation.navigate('TabNavigator');
+        setLoading(false);
       }
     } catch (e) {
       alert('Failed to fetch the data from storage');
@@ -190,6 +194,10 @@ export default function SignInScreenView({navigation}) {
     readToken();
   }, []);
   return (
+    // <View>
+    //   {loading == true ? (
+    //     <ActivityIndicator size="large" color="#e8ab00" />
+    //   ) : (
     <SafeAreaView
       style={{flex: 1, backgroundColor: 'white'}}
       forceInset={{top: 'always'}}>

@@ -1,4 +1,4 @@
-import React, {useState, useCallback, useRef, useEffect} from 'react';
+import React, {useState, useCallback, useEffect} from 'react';
 import {
   View,
   TouchableOpacity,
@@ -31,6 +31,7 @@ const SmsScreenView = props => {
     // messages,
     // onSendSMS
   } = props;
+  console.log(props, 'sms screen props');
 
   const {contactDetail} = route.params;
   var titleName = contactDetail.phone;
@@ -52,7 +53,7 @@ const SmsScreenView = props => {
     fetch('https://beta.zampi.io/Api/fetch_messages', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        // 'Content-Type': 'application/json',
       },
       body: allMessages,
     })
@@ -90,15 +91,16 @@ const SmsScreenView = props => {
     const formdata = new FormData();
     formdata.append('auth_token', token);
     formdata.append('acting_account', acting_account);
-    formdata.append('to', titleName);
-
+    if (props.route.params.contactDetail.valid) {
+      formdata.append('to', titleName);
+    } else formdata.append('to', props.route.params.contactDetail.item.number);
     formdata.append('message', messages);
     console.log(messages, 'this is gifted chat masg');
     console.log(formdata, 'form data');
     fetch('https://beta.zampi.io/Api/send_sms', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        // 'Content-Type': 'application/json',
       },
       body: formdata,
     })

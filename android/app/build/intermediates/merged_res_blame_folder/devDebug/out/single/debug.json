@@ -1,0 +1,54 @@
+[
+    {
+        "merged": "/Users/karamatghous/Downloads/zampimobileappdowmload/android/app/build/intermediates/res/merged/dev/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/karamatghous/Downloads/zampimobileappdowmload/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/karamatghous/Downloads/zampimobileappdowmload/android/app/build/intermediates/res/merged/dev/debug/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/karamatghous/Downloads/zampimobileappdowmload/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/karamatghous/Downloads/zampimobileappdowmload/android/app/build/intermediates/res/merged/dev/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/karamatghous/Downloads/zampimobileappdowmload/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/karamatghous/Downloads/zampimobileappdowmload/android/app/build/intermediates/res/merged/dev/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/karamatghous/Downloads/zampimobileappdowmload/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/karamatghous/Downloads/zampimobileappdowmload/android/app/build/intermediates/res/merged/dev/debug/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/karamatghous/Downloads/zampimobileappdowmload/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/karamatghous/Downloads/zampimobileappdowmload/android/app/build/intermediates/res/merged/dev/debug/layout_launch_screen.xml.flat",
+        "source": "/Users/karamatghous/Downloads/zampimobileappdowmload/android/app/src/main/res/layout/launch_screen.xml"
+    },
+    {
+        "merged": "/Users/karamatghous/Downloads/zampimobileappdowmload/android/app/build/intermediates/res/merged/dev/debug/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/Users/karamatghous/Downloads/zampimobileappdowmload/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/karamatghous/Downloads/zampimobileappdowmload/android/app/build/intermediates/res/merged/dev/debug/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/Users/karamatghous/Downloads/zampimobileappdowmload/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/karamatghous/Downloads/zampimobileappdowmload/android/app/build/intermediates/res/merged/dev/debug/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/karamatghous/Downloads/zampimobileappdowmload/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/karamatghous/Downloads/zampimobileappdowmload/android/app/build/intermediates/res/merged/dev/debug/drawable_launch_screen.png.flat",
+        "source": "/Users/karamatghous/Downloads/zampimobileappdowmload/android/app/src/main/res/drawable/launch_screen.png"
+    },
+    {
+        "merged": "/Users/karamatghous/Downloads/zampimobileappdowmload/android/app/build/intermediates/res/merged/dev/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/karamatghous/Downloads/zampimobileappdowmload/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/karamatghous/Downloads/zampimobileappdowmload/android/app/build/intermediates/res/merged/dev/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/karamatghous/Downloads/zampimobileappdowmload/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/karamatghous/Downloads/zampimobileappdowmload/android/app/build/intermediates/res/merged/dev/debug/drawable_ic_launcher.png.flat",
+        "source": "/Users/karamatghous/Downloads/zampimobileappdowmload/android/app/src/main/res/drawable/ic_launcher.png"
+    }
+]

@@ -40,10 +40,10 @@ const emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+
 
 
 
-// RNTwilioPhone options
-// const options = {
-//   requestPermissionsOnInit: true, // Default: true - Set to false if you want to request permissions manually
-// };
+RNTwilioPhone 
+const options = {
+  requestPermissionsOnInit: true, // Default: true - Set to false if you want to request permissions manually
+};
 
 
 const mapStateToProps = state => ({
@@ -70,8 +70,8 @@ const enhance = compose(
                     setSignInFailureAttempts();
                     getAccount({ userId: user.uid, data: global.userInfo, isNewUser: credentials.additionalUserInfo.isNewUser }, function (result) {
                         global.userEmailId = result.email;
-                     //   RNTwilioPhone.initialize(callKeepOptions, fetchAccessToken, options);
-                      //  RNTwilioPhone.initializeCallKeep(callKeepOptions, fetchAccessToken, options);
+                       RNTwilioPhone.initialize(callKeepOptions, fetchAccessToken, options);
+                       RNTwilioPhone.initializeCallKeep(callKeepOptions, fetchAccessToken, options);
                         // fetch and send token to server
                         fetchAndUpdateFCMToken(function (token) {
                             if (token)

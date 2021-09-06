@@ -253,7 +253,7 @@ const ContactDetailScreenView = props => {
         {/* Profile Image, Name, Phone, email, Address & Send Message */}
         <View style={{flexDirection: 'row', marginHorizontal: 16}}>
           {/*  Profile Image */}
-          <View style={{width: '20%', marginTop: 19,marginRight:10}}>
+          <View style={{width: '20%', marginTop: 19, marginRight: 10}}>
             <Avatar
               rounded
               source={{
@@ -271,8 +271,8 @@ const ContactDetailScreenView = props => {
               subHeader
               style={{color: colors.adminColor, fontWeight: 'bold'}}
               displayText={
-                props.route.params.contactProp.fname +   
-                   props.route.params.contactProp.lname
+                props.route.params.contactProp.fname +
+                props.route.params.contactProp.lname
               }
             />
 
@@ -292,7 +292,12 @@ const ContactDetailScreenView = props => {
                   paddingRight: 5,
                 }}>
                 <Foundation
-                  style={{color: '#53A8E2', width: '14%', marginTop: 3,marginLeft:5}}
+                  style={{
+                    color: '#53A8E2',
+                    width: '14%',
+                    marginTop: 3,
+                    marginLeft: 5,
+                  }}
                   name="telephone"
                   size={18}
                 />
@@ -346,8 +351,8 @@ const ContactDetailScreenView = props => {
             </View>
 
             {/* Send Message */}
-            {/* <View style={{flexDirection: 'row', alignItems: 'center'}}>
-              <TouchableOpacity
+            {/* <View style={{flexDirection: 'row', alignItems: 'center'}}> */}
+            {/* <TouchableOpacity
                 style={{
                   width: 80,
                   height: 26,
@@ -359,8 +364,8 @@ const ContactDetailScreenView = props => {
                 }}
                 onPress={onCallPressed}>
                 <CustomText displayText={isCallActive ? 'End' : 'Call'} />
-              </TouchableOpacity>
-              <TouchableOpacity
+              </TouchableOpacity> */}
+            {/* <TouchableOpacity
                 style={{
                   marginLeft: 14,
                   width: 120,
@@ -373,15 +378,15 @@ const ContactDetailScreenView = props => {
                 }}
                 onPress={() => onMessagePressed(channels, updateChannels)}>
                 <CustomText displayText={'Send Message'} />
-              </TouchableOpacity>
-            </View> */}
+              </TouchableOpacity> */}
+            {/* </View> */}
           </View>
         </View>
 
-        {/* <View
+        <View
           style={{height: 1, backgroundColor: colors.grey, marginVertical: 16}}
-        /> */}
-        {/* 
+        />
+
         {contactDetail && contactDetail.callHistory ? (
           <View style={{marginHorizontal: 16}}>
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
@@ -402,7 +407,7 @@ const ContactDetailScreenView = props => {
               renderItem={_renderCallHistory}
             />
           </View>
-        ) : null} */}
+        ) : null}
       </ScrollView>
     </SafeAreaView>
   );

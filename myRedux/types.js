@@ -1,0 +1,2 @@
+export const INCOMING_MESSAGES = 'INCOMING_MESSAGES';
+export const SET_MESSAGES = 'SET_MESSAGES';

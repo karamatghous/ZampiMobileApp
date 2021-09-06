@@ -6,7 +6,7 @@ export async function fetchAndUpdateFCMToken(cb) {
         if (enabled) {
             messaging().getToken().then(token => {
                 cb && cb(token);
-            });
+            });      
         } else {
             messaging().requestPermission().then(() => {
                 messaging().getToken().then(token => {
