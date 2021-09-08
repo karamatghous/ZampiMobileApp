@@ -94,7 +94,6 @@ export default function SignupScreenView({navigation}) {
             onChangeText={firstName => updateField({firstName})}
             textDecorationLine={Platform.OS == 'android' ? 'transparent' : null}
           />
-
           <Input
             inputStyle={[styles.emailText]}
             inputContainerStyle={{borderColor: 'transparent', marginTop: 10}}
@@ -103,7 +102,6 @@ export default function SignupScreenView({navigation}) {
             onChangeText={lastName => updateField({lastName})}
             textDecorationLine={Platform.OS == 'android' ? 'transparent' : null}
           />
-
           <Input
             inputStyle={[styles.emailText]}
             inputContainerStyle={{borderColor: 'transparent', marginTop: 10}}
@@ -112,7 +110,6 @@ export default function SignupScreenView({navigation}) {
             value={email}
             onChangeText={email => updateField({email})}
           />
-
           <Input
             inputStyle={[styles.emailText]}
             secureTextEntry={showPassword ? false : true}
