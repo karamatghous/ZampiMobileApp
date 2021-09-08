@@ -6,6 +6,7 @@ import {
   StatusBar,
   FlatList,
   Dimensions,
+  StyleSheet,
 } from 'react-native';
 import {Input} from 'react-native-elements';
 import Feather from 'react-native-vector-icons/Feather';
@@ -142,23 +143,41 @@ const PhoneScreenView = props => {
   }, []);
   const _renderNumberItem = ({item, index}) => {
     return (
-      <TouchableOpacity
-        style={{
-          paddingVertical: 26,
-          width: Dimensions.get('screen').width / 3,
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-        onPress={() => onNumberPressed(item)}
-        onLongPress={() => onNumberLongPressed(item)}>
-        <CustomText
-          style={{fontSize: 20, fontWeight: 'bold'}}
-          displayText={item}
-        />
-        {item == 0 ? (
-          <CustomText style={{fontSize: 16}} displayText={'+'} />
-        ) : null}
-      </TouchableOpacity>
+      <>
+        <View>
+          <View
+            style={{
+              borderBottomColor: '#D7D7D7',
+              borderBottomWidth: 1,
+              // marginTop: -26,
+            }}
+          />
+          <View style={styles.verticleLine} />
+          <View style={{marginTop: -26}}>
+            <TouchableOpacity
+              style={{
+                // position: 'relative',
+                // paddingVertical: -20,
+                width: Dimensions.get('screen').width / 3,
+                alignItems: 'center',
+                justifyContent: 'center',
+                alignSelf: 'center',
+              }}
+              onPress={() => onNumberPressed(item)}
+              onLongPress={() => onNumberLongPressed(item)}>
+              <CustomText
+                style={{fontSize: 20, fontWeight: 'bold'}}
+                displayText={item}
+              />
+              {item == 0 ? (
+                <CustomText style={{fontSize: 16}} displayText={'+'} />
+              ) : null}
+            </TouchableOpacity>
+          </View>
+
+          {/* <View style={styles.verticleLine} /> */}
+        </View>
+      </>
     );
   };
 
@@ -283,6 +302,16 @@ const PhoneScreenView = props => {
     </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  verticleLine: {
+    flexDirection: 'column',
+    height: 60,
+    // flex: 1,
+    width: 1,
+    backgroundColor: '#D7D7D7',
+  },
+});
 
 export default PhoneScreenView;
 // import React from 'react';

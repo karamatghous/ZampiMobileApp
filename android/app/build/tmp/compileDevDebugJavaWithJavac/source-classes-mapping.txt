@@ -1,9 +1,9 @@
 com/zampi/app/BuildConfig.java
  com.zampi.app.BuildConfig
-com/facebook/react/PackageList.java
- com.facebook.react.PackageList
-com/zampi/MainActivity.java
- com.zampi.app.MainActivity
 com/zampi/MainApplication.java
  com.zampi.app.MainApplication
  com.zampi.app.MainApplication$1
+com/zampi/MainActivity.java
+ com.zampi.app.MainActivity
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList

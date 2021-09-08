@@ -50,7 +50,7 @@ MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/karamatghous/.
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/c96efbf3fdcf52b111f8a4c91034ba46/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/715bae1d6d621b8f0a0e4ae3d005ab05/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-auth:19.0.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/45ae13d4e99005b2aad7f2d49caed3e9/jetified-play-services-auth-19.0.0/AndroidManifest.xml:17:1-40:12
-MERGED from [com.github.bumptech.glide:glide:4.7.1] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/4df1253855cdf023d3033f69621db933/jetified-glide-4.7.1/AndroidManifest.xml:2:1-13:12
+MERGED from [com.github.bumptech.glide:glide:4.7.1] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/6e7d2065a56032bb9931455c8ea7cab1/jetified-glide-4.7.1/AndroidManifest.xml:2:1-13:12
 MERGED from [com.google.firebase:firebase-auth:20.0.3] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/a8a280ccb18a5c52cd6918dd8e0b6ef5/jetified-firebase-auth-20.0.3/AndroidManifest.xml:17:1-83:12
 MERGED from [com.google.android.gms:play-services-iid:17.0.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/2b5f9145bf90107cb74d7e12f75dfc8d/jetified-play-services-iid-17.0.0/AndroidManifest.xml:17:1-28:12
 MERGED from [com.google.firebase:firebase-storage:19.2.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/7d3a37651d4d0d26c031d138e86e7306/jetified-firebase-storage-19.2.2/AndroidManifest.xml:15:1-39:12
@@ -95,13 +95,13 @@ MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/karamatghous/.
 MERGED from [androidx.core:core:1.3.0-rc01] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/47aca954a8db53bacbd179108edc4fbf/core-1.3.0-rc01/AndroidManifest.xml:17:1-26:12
 MERGED from [com.google.android.exoplayer:exoplayer-core:2.11.4] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/2717f35285e88d962eb287e03b490e07/jetified-exoplayer-core-2.11.4/AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.1.0-alpha01] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/27d7b1d3781c873bd9e62a89ec856ca7/localbroadcastmanager-1.1.0-alpha01/AndroidManifest.xml:17:1-22:12
-MERGED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/b5a5421a93b79b8da81d93ec1cacfb25/jetified-voice-android-5.7.2/AndroidManifest.xml:2:1-17:12
+MERGED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/29a4bf4919afbdcf26dd021fcae67849/jetified-voice-android-5.7.2/AndroidManifest.xml:2:1-17:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/13b02a68b7f7455a9049cd36d320c579/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/1af74d589cede956933545faaa1b5e7d/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/5634aa95893a15040f6809e241a8092e/jetified-lifecycle-viewmodel-savedstate-2.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/58e8800ec7d42512d5b33c54b7e527e4/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/b0612e1f7a3c0c53cd78282810b23c59/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/218994666909c58e0a74c0acee4f645b/jetified-gifdecoder-4.7.1/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/02a54e96edcbc135e12d1aab49d5cad4/jetified-gifdecoder-4.7.1/AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.firebase:firebase-components:16.1.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/736a796b46d9a4a8d8377032562f893d/jetified-firebase-components-16.1.0/AndroidManifest.xml:15:1-23:12
 MERGED from [com.google.firebase:firebase-encoders-json:17.1.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/8ddc2f912a88b4c730835bce4f00bad5/jetified-firebase-encoders-json-17.1.0/AndroidManifest.xml:15:1-23:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/a491ad6e30ad9fb10c6bea02fa50e358/lifecycle-runtime-2.2.0/AndroidManifest.xml:17:1-24:12
@@ -170,8 +170,8 @@ MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] /Users
 MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/2b0c7a95017129b99cf52eed0341f825/jetified-play-services-cloud-messaging-16.0.0/AndroidManifest.xml:8:5-67
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/c1273f2b93f408e92c66bcfc352c0896/jetified-play-services-measurement-sdk-api-18.0.2/AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/c1273f2b93f408e92c66bcfc352c0896/jetified-play-services-measurement-sdk-api-18.0.2/AndroidManifest.xml:23:5-67
-MERGED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/b5a5421a93b79b8da81d93ec1cacfb25/jetified-voice-android-5.7.2/AndroidManifest.xml:9:5-67
-MERGED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/b5a5421a93b79b8da81d93ec1cacfb25/jetified-voice-android-5.7.2/AndroidManifest.xml:9:5-67
+MERGED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/29a4bf4919afbdcf26dd021fcae67849/jetified-voice-android-5.7.2/AndroidManifest.xml:9:5-67
+MERGED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/29a4bf4919afbdcf26dd021fcae67849/jetified-voice-android-5.7.2/AndroidManifest.xml:9:5-67
 	android:name
 		ADDED from /Users/karamatghous/Downloads/zampimobileappdowmload/android/app/src/main/AndroidManifest.xml:4:22-64
 uses-permission#android.permission.BIND_TELECOM_CONNECTION_SERVICE
@@ -226,8 +226,8 @@ MERGED from [com.facebook.soloader:soloader:0.9.0] /Users/karamatghous/.gradle/c
 MERGED from [com.facebook.soloader:soloader:0.9.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/ef3ef999c954b572f15be6f5ba6d73d1/jetified-soloader-0.9.0/AndroidManifest.xml:11:5-20
 MERGED from [com.google.android.gms:play-services-auth:19.0.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/45ae13d4e99005b2aad7f2d49caed3e9/jetified-play-services-auth-19.0.0/AndroidManifest.xml:22:5-38:19
 MERGED from [com.google.android.gms:play-services-auth:19.0.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/45ae13d4e99005b2aad7f2d49caed3e9/jetified-play-services-auth-19.0.0/AndroidManifest.xml:22:5-38:19
-MERGED from [com.github.bumptech.glide:glide:4.7.1] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/4df1253855cdf023d3033f69621db933/jetified-glide-4.7.1/AndroidManifest.xml:11:5-20
-MERGED from [com.github.bumptech.glide:glide:4.7.1] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/4df1253855cdf023d3033f69621db933/jetified-glide-4.7.1/AndroidManifest.xml:11:5-20
+MERGED from [com.github.bumptech.glide:glide:4.7.1] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/6e7d2065a56032bb9931455c8ea7cab1/jetified-glide-4.7.1/AndroidManifest.xml:11:5-20
+MERGED from [com.github.bumptech.glide:glide:4.7.1] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/6e7d2065a56032bb9931455c8ea7cab1/jetified-glide-4.7.1/AndroidManifest.xml:11:5-20
 MERGED from [com.google.firebase:firebase-auth:20.0.3] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/a8a280ccb18a5c52cd6918dd8e0b6ef5/jetified-firebase-auth-20.0.3/AndroidManifest.xml:26:5-81:19
 MERGED from [com.google.firebase:firebase-auth:20.0.3] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/a8a280ccb18a5c52cd6918dd8e0b6ef5/jetified-firebase-auth-20.0.3/AndroidManifest.xml:26:5-81:19
 MERGED from [com.google.android.gms:play-services-iid:17.0.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/2b5f9145bf90107cb74d7e12f75dfc8d/jetified-play-services-iid-17.0.0/AndroidManifest.xml:26:5-20
@@ -276,12 +276,12 @@ MERGED from [com.google.android.gms:play-services-basement:17.2.1] /Users/karama
 MERGED from [com.google.android.gms:play-services-basement:17.2.1] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/26705500dc62584c3acd898ce4d54402/jetified-play-services-basement-17.2.1/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.core:core:1.3.0-rc01] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/47aca954a8db53bacbd179108edc4fbf/core-1.3.0-rc01/AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.3.0-rc01] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/47aca954a8db53bacbd179108edc4fbf/core-1.3.0-rc01/AndroidManifest.xml:24:5-89
-MERGED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/b5a5421a93b79b8da81d93ec1cacfb25/jetified-voice-android-5.7.2/AndroidManifest.xml:15:5-20
-MERGED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/b5a5421a93b79b8da81d93ec1cacfb25/jetified-voice-android-5.7.2/AndroidManifest.xml:15:5-20
+MERGED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/29a4bf4919afbdcf26dd021fcae67849/jetified-voice-android-5.7.2/AndroidManifest.xml:15:5-20
+MERGED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/29a4bf4919afbdcf26dd021fcae67849/jetified-voice-android-5.7.2/AndroidManifest.xml:15:5-20
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/13b02a68b7f7455a9049cd36d320c579/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/13b02a68b7f7455a9049cd36d320c579/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
-MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/218994666909c58e0a74c0acee4f645b/jetified-gifdecoder-4.7.1/AndroidManifest.xml:9:5-20
-MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/218994666909c58e0a74c0acee4f645b/jetified-gifdecoder-4.7.1/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/02a54e96edcbc135e12d1aab49d5cad4/jetified-gifdecoder-4.7.1/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/02a54e96edcbc135e12d1aab49d5cad4/jetified-gifdecoder-4.7.1/AndroidManifest.xml:9:5-20
 MERGED from [com.android.installreferrer:installreferrer:1.1.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/5a9c79a6a6c6b7f66d31e1adc3abef70/jetified-installreferrer-1.1.2/AndroidManifest.xml:11:5-20
 MERGED from [com.android.installreferrer:installreferrer:1.1.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/5a9c79a6a6c6b7f66d31e1adc3abef70/jetified-installreferrer-1.1.2/AndroidManifest.xml:11:5-20
 	android:appComponentFactory
@@ -442,8 +442,8 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/karamatghous/.grad
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/715bae1d6d621b8f0a0e4ae3d005ab05/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-auth:19.0.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/45ae13d4e99005b2aad7f2d49caed3e9/jetified-play-services-auth-19.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-auth:19.0.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/45ae13d4e99005b2aad7f2d49caed3e9/jetified-play-services-auth-19.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.github.bumptech.glide:glide:4.7.1] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/4df1253855cdf023d3033f69621db933/jetified-glide-4.7.1/AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.bumptech.glide:glide:4.7.1] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/4df1253855cdf023d3033f69621db933/jetified-glide-4.7.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.bumptech.glide:glide:4.7.1] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/6e7d2065a56032bb9931455c8ea7cab1/jetified-glide-4.7.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.bumptech.glide:glide:4.7.1] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/6e7d2065a56032bb9931455c8ea7cab1/jetified-glide-4.7.1/AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:firebase-auth:20.0.3] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/a8a280ccb18a5c52cd6918dd8e0b6ef5/jetified-firebase-auth-20.0.3/AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-auth:20.0.3] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/a8a280ccb18a5c52cd6918dd8e0b6ef5/jetified-firebase-auth-20.0.3/AndroidManifest.xml:21:5-44
 MERGED from [com.google.android.gms:play-services-iid:17.0.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/2b5f9145bf90107cb74d7e12f75dfc8d/jetified-play-services-iid-17.0.0/AndroidManifest.xml:20:5-44
@@ -532,8 +532,8 @@ MERGED from [com.google.android.exoplayer:exoplayer-core:2.11.4] /Users/karamatg
 MERGED from [com.google.android.exoplayer:exoplayer-core:2.11.4] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/2717f35285e88d962eb287e03b490e07/jetified-exoplayer-core-2.11.4/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.1.0-alpha01] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/27d7b1d3781c873bd9e62a89ec856ca7/localbroadcastmanager-1.1.0-alpha01/AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.1.0-alpha01] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/27d7b1d3781c873bd9e62a89ec856ca7/localbroadcastmanager-1.1.0-alpha01/AndroidManifest.xml:20:5-44
-MERGED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/b5a5421a93b79b8da81d93ec1cacfb25/jetified-voice-android-5.7.2/AndroidManifest.xml:5:5-7:41
-MERGED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/b5a5421a93b79b8da81d93ec1cacfb25/jetified-voice-android-5.7.2/AndroidManifest.xml:5:5-7:41
+MERGED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/29a4bf4919afbdcf26dd021fcae67849/jetified-voice-android-5.7.2/AndroidManifest.xml:5:5-7:41
+MERGED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/29a4bf4919afbdcf26dd021fcae67849/jetified-voice-android-5.7.2/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/13b02a68b7f7455a9049cd36d320c579/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/13b02a68b7f7455a9049cd36d320c579/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/1af74d589cede956933545faaa1b5e7d/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
@@ -544,8 +544,8 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /Users/karamatghous/.
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/58e8800ec7d42512d5b33c54b7e527e4/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/b0612e1f7a3c0c53cd78282810b23c59/cardview-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/b0612e1f7a3c0c53cd78282810b23c59/cardview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/218994666909c58e0a74c0acee4f645b/jetified-gifdecoder-4.7.1/AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/218994666909c58e0a74c0acee4f645b/jetified-gifdecoder-4.7.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/02a54e96edcbc135e12d1aab49d5cad4/jetified-gifdecoder-4.7.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/02a54e96edcbc135e12d1aab49d5cad4/jetified-gifdecoder-4.7.1/AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.firebase:firebase-components:16.1.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/736a796b46d9a4a8d8377032562f893d/jetified-firebase-components-16.1.0/AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-components:16.1.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/736a796b46d9a4a8d8377032562f893d/jetified-firebase-components-16.1.0/AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-encoders-json:17.1.0] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/8ddc2f912a88b4c730835bce4f00bad5/jetified-firebase-encoders-json-17.1.0/AndroidManifest.xml:19:5-21:41
@@ -624,8 +624,8 @@ MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] /U
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/c1273f2b93f408e92c66bcfc352c0896/jetified-play-services-measurement-sdk-api-18.0.2/AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.exoplayer:exoplayer-core:2.11.4] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/2717f35285e88d962eb287e03b490e07/jetified-exoplayer-core-2.11.4/AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.exoplayer:exoplayer-core:2.11.4] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/2717f35285e88d962eb287e03b490e07/jetified-exoplayer-core-2.11.4/AndroidManifest.xml:24:5-79
-MERGED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/b5a5421a93b79b8da81d93ec1cacfb25/jetified-voice-android-5.7.2/AndroidManifest.xml:12:5-79
-MERGED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/b5a5421a93b79b8da81d93ec1cacfb25/jetified-voice-android-5.7.2/AndroidManifest.xml:12:5-79
+MERGED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/29a4bf4919afbdcf26dd021fcae67849/jetified-voice-android-5.7.2/AndroidManifest.xml:12:5-79
+MERGED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/29a4bf4919afbdcf26dd021fcae67849/jetified-voice-android-5.7.2/AndroidManifest.xml:12:5-79
 	android:name
 		ADDED from [:react-native-firebase_analytics] /Users/karamatghous/Downloads/zampimobileappdowmload/node_modules/@react-native-firebase/analytics/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:22-76
 uses-permission#android.permission.WAKE_LOCK
@@ -1027,14 +1027,14 @@ ADDED from [com.google.android.gms:play-services-basement:17.2.1] /Users/karamat
 	android:name
 		ADDED from [com.google.android.gms:play-services-basement:17.2.1] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/26705500dc62584c3acd898ce4d54402/jetified-play-services-basement-17.2.1/AndroidManifest.xml:24:13-58
 uses-permission#android.permission.RECORD_AUDIO
-ADDED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/b5a5421a93b79b8da81d93ec1cacfb25/jetified-voice-android-5.7.2/AndroidManifest.xml:10:5-71
+ADDED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/29a4bf4919afbdcf26dd021fcae67849/jetified-voice-android-5.7.2/AndroidManifest.xml:10:5-71
 	android:name
-		ADDED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/b5a5421a93b79b8da81d93ec1cacfb25/jetified-voice-android-5.7.2/AndroidManifest.xml:10:22-68
+		ADDED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/29a4bf4919afbdcf26dd021fcae67849/jetified-voice-android-5.7.2/AndroidManifest.xml:10:22-68
 uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
-ADDED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/b5a5421a93b79b8da81d93ec1cacfb25/jetified-voice-android-5.7.2/AndroidManifest.xml:11:5-80
+ADDED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/29a4bf4919afbdcf26dd021fcae67849/jetified-voice-android-5.7.2/AndroidManifest.xml:11:5-80
 	android:name
-		ADDED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/b5a5421a93b79b8da81d93ec1cacfb25/jetified-voice-android-5.7.2/AndroidManifest.xml:11:22-77
+		ADDED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/29a4bf4919afbdcf26dd021fcae67849/jetified-voice-android-5.7.2/AndroidManifest.xml:11:22-77
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/b5a5421a93b79b8da81d93ec1cacfb25/jetified-voice-android-5.7.2/AndroidManifest.xml:13:5-76
+ADDED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/29a4bf4919afbdcf26dd021fcae67849/jetified-voice-android-5.7.2/AndroidManifest.xml:13:5-76
 	android:name
-		ADDED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/b5a5421a93b79b8da81d93ec1cacfb25/jetified-voice-android-5.7.2/AndroidManifest.xml:13:22-73
+		ADDED from [com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/29a4bf4919afbdcf26dd021fcae67849/jetified-voice-android-5.7.2/AndroidManifest.xml:13:22-73

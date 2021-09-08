@@ -57,14 +57,14 @@
 27-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/3869b04bb623fb90d7db70c4ad4cc3c2/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:26:5-110
 27-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/3869b04bb623fb90d7db70c4ad4cc3c2/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:26:22-107
 28    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-28-->[com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/b5a5421a93b79b8da81d93ec1cacfb25/jetified-voice-android-5.7.2/AndroidManifest.xml:10:5-71
-28-->[com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/b5a5421a93b79b8da81d93ec1cacfb25/jetified-voice-android-5.7.2/AndroidManifest.xml:10:22-68
+28-->[com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/29a4bf4919afbdcf26dd021fcae67849/jetified-voice-android-5.7.2/AndroidManifest.xml:10:5-71
+28-->[com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/29a4bf4919afbdcf26dd021fcae67849/jetified-voice-android-5.7.2/AndroidManifest.xml:10:22-68
 29    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-29-->[com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/b5a5421a93b79b8da81d93ec1cacfb25/jetified-voice-android-5.7.2/AndroidManifest.xml:11:5-80
-29-->[com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/b5a5421a93b79b8da81d93ec1cacfb25/jetified-voice-android-5.7.2/AndroidManifest.xml:11:22-77
+29-->[com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/29a4bf4919afbdcf26dd021fcae67849/jetified-voice-android-5.7.2/AndroidManifest.xml:11:5-80
+29-->[com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/29a4bf4919afbdcf26dd021fcae67849/jetified-voice-android-5.7.2/AndroidManifest.xml:11:22-77
 30    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-30-->[com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/b5a5421a93b79b8da81d93ec1cacfb25/jetified-voice-android-5.7.2/AndroidManifest.xml:13:5-76
-30-->[com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/b5a5421a93b79b8da81d93ec1cacfb25/jetified-voice-android-5.7.2/AndroidManifest.xml:13:22-73
+30-->[com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/29a4bf4919afbdcf26dd021fcae67849/jetified-voice-android-5.7.2/AndroidManifest.xml:13:5-76
+30-->[com.twilio:voice-android:5.7.2] /Users/karamatghous/.gradle/caches/transforms-2/files-2.1/29a4bf4919afbdcf26dd021fcae67849/jetified-voice-android-5.7.2/AndroidManifest.xml:13:22-73
 31
 32    <application
 32-->/Users/karamatghous/Downloads/zampimobileappdowmload/android/app/src/main/AndroidManifest.xml:10:5-38:19

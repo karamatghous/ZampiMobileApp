@@ -65,8 +65,8 @@ export default function SignInScreenView({navigation}) {
   const emailPattern = /^[^\s@]+@[^\s@]+$/;
 
   const formdata = new FormData();
-  formdata.append('email', email);
-  formdata.append('password', password);
+  formdata.append('email',email);
+  formdata.append('password',password);
 
   // if(  emailPattern.test(email))
 
@@ -93,6 +93,7 @@ export default function SignInScreenView({navigation}) {
   };
 
   const onSignInPressed = async () => {
+    console.log(formdata, 'sign in form data');
     try {
       if (email != null)
         if (password != null)

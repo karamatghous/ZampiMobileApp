@@ -7,8 +7,16 @@ import {
   Dimensions,
   Modal,
   Platform,
+  StyleSheet,
+  Text,
 } from 'react-native';
-import {GiftedChat, Bubble} from 'react-native-gifted-chat';
+import {
+  GiftedChat,
+  Bubble,
+  InputToolbar,
+  Send,
+  Avatar,
+} from 'react-native-gifted-chat';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 const axios = require('axios');
 import _ from 'lodash';
@@ -37,6 +45,8 @@ const SmsScreenView = props => {
   var titleName = contactDetail.phone;
   const [messages, setMessages] = useState([]);
   const [Allmessages, setAllMessages] = useState([]);
+  const [time, setTime] = useState([]);
+
   const appandMessages = [];
 
   useEffect(async () => {
@@ -60,6 +70,7 @@ const SmsScreenView = props => {
       .then(response => response.json())
       .then(json => {
         setAllMessages(json.data.messages);
+        setTime(json.data.date);
         console.log(json, 'all messages');
       })
       .catch(error => {
@@ -78,7 +89,7 @@ const SmsScreenView = props => {
             user: {
               _id: item.id,
               name: 'item.sender.username',
-              // avatar: 'https://placeimg.com/140/140/any',
+              avatar: 'https://placeimg.com/140/140/any',
             },
           };
         })
@@ -115,26 +126,31 @@ const SmsScreenView = props => {
   };
   const renderBubble = props => {
     return (
-      <Bubble
-        {...props}
-        textStyle={{
-          right: {
-            color: 'white',
-          },
-          left: {
-            color: 'white',
-          },
-        }}
-        wrapperStyle={{
-          left: {
-            backgroundColor: 'green',
-            left: 2,
-          },
-          right: {
-            backgroundColor: 'red',
-          },
-        }}
-      />
+      <View>
+        <Bubble
+          {...props}
+          textStyle={{
+            right: {
+              color: 'white',
+            },
+            left: {
+              color: 'black',
+            },
+          }}
+          wrapperStyle={{
+            left: {
+              backgroundColor: '#F8F9FA',
+              borderRadius: 6,
+              left: 2,
+            },
+            right: {
+              backgroundColor: '#55C2DE',
+              borderRadius: 6,
+            },
+          }}
+        />
+        {/* <Text style={{color: 'grey', marginLeft: 10}}>Thu 2:30</Text> */}
+      </View>
     );
   };
   // const onSend = useCallback((messages = []) => {
@@ -169,6 +185,56 @@ const SmsScreenView = props => {
     );
     onSendSMS(messages[0].text);
   }, []);
+  const customtInputToolbar = props => {
+    return (
+      <InputToolbar
+        {...props}
+        containerStyle={{
+          width: 400,
+          height: 10,
+          backgroundColor: 'red',
+          borderTopColor: '#E8E8E8',
+          borderTopWidth: 1,
+          padding: 8,
+          // borderRadius: 30,
+        }}
+      />
+    );
+  };
+  const renderSend = props => {
+    return (
+      <Send {...props}>
+        <View style={styles.sendingContainer}>
+          <Ionicons
+            style={{marginLeft: 5}}
+            name="send-sharp"
+            size={21}
+            color="white"
+          />
+
+          {/* <IconButton icon="" size={32} color="#6646ee" /> */}
+        </View>
+      </Send>
+    );
+  };
+  const scrollToBottomComponent = () => {
+    return (
+      <View style={styles.bottomComponentContainer}>
+        <Ionicons name="chevron-down-circle-sharp" size={28} color="#55C2DE" />
+      </View>
+    );
+  };
+  // const renderAvatar = props => {
+  //   return (
+  //     <Avatar
+  //       {...props}
+  //       containerStyle={{
+  //         size: 20,
+  //       }}
+  //     />
+  //   );
+  // };
+
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
       <StatusBar barStyle="dark-content" backgroundColor={'white'} />
@@ -229,11 +295,33 @@ const SmsScreenView = props => {
           _id: 215,
         }}
         renderBubble={renderBubble}
-        // loadEarlier={true}
-        // avatar={false}
+        renderSend={renderSend}
+        scrollToBottomComponent={scrollToBottomComponent}
+        scrollToBottom
+        isTyping={true}
+        alwaysShowSend={true}
+        showUserAvatar={true}
+        // renderTime={() => {
+        //   return null;
+        // }}
       />
     </SafeAreaView>
   );
 };
-
+const styles = StyleSheet.create({
+  sendingContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+    marginRight: 10,
+    backgroundColor: '#55C2DE',
+    borderRadius: 50,
+    width: 29.16,
+    height: 29.16,
+  },
+  bottomComponentContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
 export default SmsScreenView;
