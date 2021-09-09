@@ -13,6 +13,8 @@ RNTwilioPhone.handleBackgroundState();
 TrackPlayer.registerPlaybackService(() =>
   require('./src/services/trackplayer-service'),
 );
+TrackPlayer.registerPlaybackService(() => require('./tracks'));
+
 // messaging().setBackgroundMessageHandler(async remoteMessage => {
 //   console.log('Message handled in the background!', remoteMessage);
 // });

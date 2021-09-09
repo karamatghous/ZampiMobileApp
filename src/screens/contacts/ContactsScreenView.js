@@ -124,8 +124,8 @@ const ContactsScreenView = props => {
       <View
         style={{
           borderWidth: 0.2,
-          width: 350,
-          height: 90,
+          width: "90%",
+          height: 96,
           borderRadius: 4,
           borderColor: '#D7D7D7',
           justifyContent: 'center',
@@ -152,7 +152,7 @@ const ContactsScreenView = props => {
           <View style={{width: '4%'}} />
 
           {/* Phone, email & Address */}
-          <View style={{width: '78%', justifyContent: 'center'}}>
+          <View style={{width: '78%', justifyContent: 'center',marginTop:"3%"}}>
             <CustomText
               header
               style={{
@@ -210,14 +210,13 @@ const ContactsScreenView = props => {
                 />
               </View>
             </View>
-
             {/* Address */}
             <View
               style={{
                 flexDirection: 'row',
                 alignItems: 'center',
                 width: '100%',
-                marginBottom: 6,
+                marginBottom: "5%",
               }}>
               <Entypo
                 style={{color: '#53A8E2', width: '10%'}}

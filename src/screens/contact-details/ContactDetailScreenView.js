@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   View,
   TouchableOpacity,
@@ -9,6 +9,8 @@ import {
   Dimensions,
   Platform,
   Text,
+  Linking,
+  Button,
 } from 'react-native';
 import {Avatar} from 'react-native-elements';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -33,6 +35,37 @@ const ContactDetailScreenView = props => {
     onMessagePressed,
     isCallActive,
   } = props;
+  const tracks = [
+    {
+      id: 1,
+      url: 'https://raw.githubusercontent.com/zmxv/react-native-sound-demo/master/frog.wav',
+      title: 'first track',
+      artist: 'karamat',
+      artwork: 'react native',
+    },
+  
+  ];
+  TrackPlayer.updateOptions({
+    stopWithApp: false,
+    capabilities: [TrackPlayer.CAPABILITY_PLAY, TrackPlayer.CAPABILITY_PAUSE],
+    compactCapabilities: [
+      TrackPlayer.CAPABILITY_PLAY,
+      TrackPlayer.CAPABILITY_PAUSE,
+    ],
+  });
+  const _callHistory = async () => {
+    try {
+      await TrackPlayer.setupPlayer();
+      await TrackPlayer.add(tracks);
+      console.log('track added');
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  useEffect(() => {
+    _callHistory();
+    return () => TrackPlayer.destroy();
+  }, []);
 
   const {channels, updateChannels} = useApp();
   var history = ['Pankaj', 'Rita', 'Mohan', 'Amit', 'Babulal', 'Sakshi'];
@@ -238,7 +271,7 @@ const ContactDetailScreenView = props => {
           style={{
             borderWidth: 0.2,
             borderColor: '#D7D7D7',
-            width: 350,
+            width: "90%",
             height: 59,
             backgroundColor: '#FFFFFF',
             marginBottom: 10,
@@ -260,7 +293,7 @@ const ContactDetailScreenView = props => {
             />
           </View>
 
-          <View style={{paddingLeft: 10}}>
+          <View style={{paddingLeft: 10,}}>
             <Text style={{color: '#454545', fontWeight: 'bold', fontSize: 12}}>
               Karamat Ghous
             </Text>
@@ -268,7 +301,7 @@ const ContactDetailScreenView = props => {
               jhelum
             </Text>
           </View>
-          <View style={{marginLeft: 80}}>
+          <View style={{marginLeft: 40}}>
             <View style={{marginTop: 5, flexDirection: 'row'}}>
               <Ionicons style={{color: '#53A8E2'}} name="calendar" size={16} />
               <Text style={{marginLeft: 5, color: '#454545'}}>Jun 16,2020</Text>
@@ -317,15 +350,19 @@ const ContactDetailScreenView = props => {
               source={{
                 uri: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0PDxAPDg8PDw0NDw4PDw8PDw8PDxEQFREWFhURFhUYHiggGBolGxUVITEhJSkrLi4uFx8zODMsNygtLisBCgoKDQ0NDg8NDysZHxkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAOAA4QMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAAAQMCBgcEBf/EAD0QAAICAAIFCAcGBQUAAAAAAAABAgMEEQUGEiExMkFRYXGBkaETIiNCUrHBBxQzYnLRQ4KSouEWVLLC8f/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A64AAAAABAlASkZxREUWRQEpGWQSJAAAAAAAAAAAAQ0SAMGjCSLWYtAUNGLLZIraAgAACCSAPYAAPIAAAAAIzijFGcUBnFGaIijJASAAAPi6d1jowvq/iXZbq4vh1yfMaRpTWLF4jNSnsVv8Ah15xWXW+LA6BjtOYSjdZdHa+GPry7Mlw7z4mI15oX4dNk+tuMPI0QFG5f67f+3/v/wAF+H16pf4lFkVzuMoy8jRgEdX0dpvC4jdVbFy+CXqz8Hx7j6Bxhea5zZdBa23UtQxGdtXDae+yHf7yIroQKsLia7YKyuSnCW9SRaAIZIAqkiuSLmiuSAqYMmYgCCSAPYAAPIAAAQCAyRZFGES2IGSMiESAPia1aa+61ZQy9PbmoL4VzzfYfbbOU6waQeJxNlmfqJ7Fa6ILh48e8D585NtuTbk2223m2+lkAFQAAAAAAAB9TQGm7MJZms5VS/Erz3PrXQzpuDxVd1cbK3tQms0/o+s48bHqZph0Wqmb9jc8lnwjZzPv4BXRAAQQyuSLWYSApkYMskYMCCCSAPYAAPIAABKIJQFkSyJXEtQGSAAHy9ZsX6HCXSXKcdiPbLd8szlhvf2h35U1V/HY2/5Vu+ZohQAAQAAAAAAAAHk+ZgAdW1fx33jDVWPlOOzP9Udz+R9E1P7PLs6bYfBYpLslH/BthFDFmRiwKpFbLZFbAxIJIA9gAA8gAAGSMUZICyJYjCJmgMgABo32it+koXNsTfftI1E3v7QsLtU1Wr+HNxl2SW7zRohUAAAAAAAAAAAAAG5fZznniej2P/c3U1jUDC7OGlY+N1jy/THd88zZyKEMkhgVyKpFsiuQGDIJZAHsAAHkAABGUTEyQFsSxFcTNAZAADx6YwSvosq55xez1SW9eZyWUWm09zTaa60db0vdKvD3TjulGubT6HlxOR5t73vb3t9YAAFQAAAAAAAAMqq5TlGMd8ptRS628kYl2CxUqbIWxy2q5KSzWa7AOs6PwqpprqjwrhGPflvZ6DCmzajGXxRjLxWZmRQhkkMDCRVIskVyAwZBLIA9gAA8gAAGSMSUBbEsRVEtQGQAA8ulYbWHuXTVZ/xZyFHZ5xTTT4NNPvOQY7DSqtsrlyq5yj57mBQACoAAAAAAAADLPcuL3A9WiqHZfTBe9bDwTzfkgOs4aOUILohFeSLACKEMkxYGEiqRZIrYGJBJAHsAAHkAAAlEBAWRLYlMWWxAsQIRIA1TXbQnpIvE1r2lcfaL4oL3u1fI2siUU0096aaa6gOMg92m8A8NiLKvdTzg+mD3r9u48JUAAAAAAAADb9RtDScli7N0I5qpc8nwc+w17Qmjnib4VLkt5zfRBcX9O86tVXGEYwisoxSjFLmSIrMAADFksxkBXIrZnJmDAggkgD2AADyAAAAAMkWRZUjOLAuRkVxZmgJAAGra+aNU6ViFy6N0uutv6P5mgnUNbLFHBX588VFdrkjl5QAAQAAAAAb39n2EiqrLvfnPYXVGPN4s2w+DqRDLBQ/NO1/3P9j7xFAAwIZXJmTZXJgYSMWSyABBJAHsAAHkAAAAAEZJmJKAtiyxMpiyyLAsBCZTjsXXRXK2x5Qgs31vmS62B8vW/A234Zxq3uElY4c80k9y6zmZ1jQmNWIohcuM9pyXwyz3x7jWdb9XHnLE4eO7jbWv+cV8wNNABUAAAB7dF6LvxUtmmDeXKk90I9r+h0DQWq9GFynLK2/45LdF/lXN2gZaqPLC11uMoWVxynCa2ZLPenl0M+wfM1gx9WFjC+We1tKvJcZxb9ZPsW//ANPoU2xnGM4NShNKUWuDTIrMxZLZhJgRJlcmTJmDYEMAACCSAPYAAPIAAAAAAqvvhWtqyUYR6ZNI+BpDW6iG6mLtl08mHjxYGypizEQgs5zjBLnlJJeZzrGay4yz+J6OPRWsvPifKtslN5zlKT6ZNyfmB0PHa24SrNQbul0QXq/1P6Zmm6b05di5ev6tcXnGuPJXW+lnzAVG26gaQ2bJ4eT9WxbcOqS4rvXyN6OQaPxTpurtXGual2rnXhmddrsUoqS3qSTT6mRWq6xapKxu3C5RseblU90ZPpj0PyNHvpnXJwnFwnHc4yWTR2Q1TXu7CqEYWQ28TJZ1tPZlBfE30dQGiJNtJLNvckt7b6DbNA6mzsysxWdcOKqW6cv1P3V5mf2fzwznOEq195Sco2N55w51Fe619TewKcLhq6oKFUIwhHhGKyRcD4utmlPu2Gk4v2tvs6+1rfLuQGla4aU+8YhqLzqpzhDob96Xj8j2anae9C/u9z9lN+zk+EJPmfUzVwVHZGyuTOY4HT2MoyULW4r3LPXj5714n3sJrouF9TX5q3mu3JkVtrZifPwem8JdyLY5/DL1JeZ7wJAAAgkgD2AADyESkks20kud7kajpLXB5uOGgsuHpLOfrUf3NcxmkL7nnbZKfU3lFfyrcBvOO1mwlWaUvSyXNXvX9XA17Ha24ieaqjGqPTyp+L3GvAqLL77LHtWTlOXTJtlYAAAAAAAOj6mY70uFjFv1qG632Lk+W7uOcGx6j430eIdb5N8d36o715Zgb3jcXCmuds3lGuLb6+hLrZyrSONniLZ2z5U3w5ormiupI3fXeqyeFzhns1zUrIrnjwz7mc/Ir0aPxkqLYXQ5Vck8ulc8e9Zo67hcRC2uFkHnCyKlF9TONHSNR4Wxwcdt+rKcpVrnUM/3zYGxZnMNb9J/eMS1F51U51w6G8/Wl4/I3fWfSP3fCzmnlZP2df6pc/cs33HLQAAKgAAB68HpTE0/h2zS+Fvaj4M8gA2jB642LddXGf5oPZfhwPu4LWHCW7lYoSfu2eo/Hgc6AHWk8+HAHMMFpPEUfhWSivhfrQ8GbPo3W+Eso4mOw/jhm4d64oit0B8z/UWA/wBzV4v9gBywAFQAAAAAAAAAAAsw17rnCyPGuUZLuZWAOsVzhbWnulCyGeT3pxkuBzXTej3hr51+7yoPpg+H1XcbdqZjPSYbYfKok4fyvfE+DrpZnisvgqhHvzb+qIr4UIuTUVxk0l2t5HYMNUq4QhHdGEYxXYlkchpnsyjJ8Iyi/B5nYE+HWBpf2h4jOdFWfJjKxrteS+TNQPq6z4v02LtknnGD9HHoyju+Z8oqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPuanYv0eJUHyb4uH8y3x+vieXWOzaxdz6JqP9MUvofPqscJRnHdKElJdqeaMsTbtznN7nZOU33vMCs6Vh9JqOj44jPfGj+9LZ+aOanvWkpfdHheZ3KzP8uXJ8Un4geBtve+Lbb7XxAAAAAAAAAAAAAAAAAAH/9k=',
               }}
-              size={80}
+              size={72}
             />
           </View>
 
           {/* Name, Phone, email, Address & Send Message */}
-          <View style={{width: '80%', paddingLeft: 26}}>
+          <View style={{width: '80%', paddingLeft: 10}}>
             <CustomText
               subHeader
-              style={{color: colors.adminColor, fontWeight: 'bold'}}
+              style={{
+                color: colors.adminColor,
+                fontWeight: 'bold',
+                fontSize: 18,
+              }}
               displayText={
                 props.route.params.contactProp.fname +
                 props.route.params.contactProp.lname
@@ -344,46 +381,43 @@ const ContactDetailScreenView = props => {
                 style={{
                   flexDirection: 'row',
                   alignItems: 'center',
-                  width: '50%',
+                  width: '40%',
                   paddingRight: 5,
                 }}>
-                <Foundation
-                  style={{
-                    color: '#53A8E2',
-                    width: '14%',
-                    marginTop: 3,
-                    marginLeft: 5,
-                  }}
-                  name="telephone"
-                  size={18}
-                />
-                <CustomText
-                  title
-                  numberOfLines={1}
-                  style={{marginLeft: 2, width: '86%'}}
-                  displayText={props.route.params.contactProp.number}
-                />
+                <TouchableOpacity style={{flexDirection: 'row'}}>
+                  <Foundation
+                    style={{
+                      color: '#53A8E2',
+                      marginTop: 3,
+                      marginRight: 5,
+                    }}
+                    name="telephone"
+                    size={13}
+                  />
+                  <CustomText
+                    title
+                    numberOfLines={1}
+                    style={{marginLeft: 2, width: '86%', fontSize: 12}}
+                    displayText={props.route.params.contactProp.number}
+                  />
+                </TouchableOpacity>
               </View>
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                width: '50%',
-                paddingLeft: 5,
-                marginTop: 7,
-              }}>
-              <Foundation
-                style={{color: '#53A8E2', width: '16%'}}
-                name="mail"
-                size={18}
-              />
-              <CustomText
-                title
-                numberOfLines={1}
-                style={{paddingLeft: 2, width: '84%'}}
-                displayText={props.route.params.contactProp.email1}
-              />
+
+              <View style={{flexDirection: 'row'}}>
+                <TouchableOpacity style={{flexDirection: 'row'}}>
+                  <Foundation
+                    style={{color: '#53A8E2', marginTop: "3%", marginRight: 5}}
+                    name="mail"
+                    size={13}
+                  />
+                  <CustomText
+                    title
+                    numberOfLines={1}
+                    style={{paddingLeft: 2, width: '75%', fontSize: 12}}
+                    displayText={props.route.params.contactProp.email1}
+                  />
+                </TouchableOpacity>
+              </View>
             </View>
 
             {/* Address */}
@@ -392,22 +426,28 @@ const ContactDetailScreenView = props => {
                 flexDirection: 'row',
                 alignItems: 'center',
                 width: '100%',
-                marginTop: 7,
+                marginTop: 5,
               }}>
               <Entypo
-                style={{color: '#53A8E2', width: '10%'}}
+                style={{color: '#53A8E2'}}
                 name="price-ribbon"
-                size={18}
+                size={13}
               />
               <CustomText
                 numberOfLines={2}
-                style={{paddingLeft: 2, width: '90%'}}
+                style={{paddingLeft: 3, width: '90%', fontSize: 12}}
                 displayText={props.route.params.contactProp.fname}
               />
             </View>
 
             {/* Send Message */}
-            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                marginTop: 7,
+                marginLeft: -16,
+              }}>
               {/* <TouchableOpacity
                 style={{
                   width: 80,
@@ -424,16 +464,27 @@ const ContactDetailScreenView = props => {
               <TouchableOpacity
                 style={{
                   marginLeft: 14,
-                  width: 120,
-                  height: 26,
+                  width: 113,
+                  height: 20,
                   alignItems: 'center',
                   justifyContent: 'center',
-                  borderWidth: 1.4,
-                  borderRadius: 16,
+                  alignSelf: 'center',
+                  borderWidth: 1.33,
+                  borderRadius: 29.18,
                   marginTop: 6,
                 }}
                 onPress={() => onMessagePressed(channels, updateChannels)}>
-                <CustomText displayText={'Send Message'} />
+                <CustomText
+                  displayText={'Send Message'}
+                  style={{
+                    marginBottom: 3,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    alignSelf: 'center',
+                    fontWeight: 'bold',
+                    fontSize: 10,
+                  }}
+                />
               </TouchableOpacity>
             </View>
           </View>
@@ -468,6 +519,12 @@ const ContactDetailScreenView = props => {
           <Text style={{fontWeight: 'bold', fontSize: 14}}>
             Appoinment History
           </Text>
+          <TouchableOpacity onPress={() => TrackPlayer.play()}>
+            <Text>Play</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => TrackPlayer.stop()}>
+            <Text>stop</Text>
+          </TouchableOpacity>
         </View>
         <FlatList
           scrollEnabled={true}
