@@ -42,6 +42,8 @@ const callKeepOptions = {
     },
   },
 };
+const winHeight = Dimensions.get('window').height;
+
 const from = Platform.select({
   ios: 'client:Steve',
   android: 'client:Larry',
@@ -148,7 +150,7 @@ const PhoneScreenView = props => {
         style={{
           borderWidth: 0.5,
           borderColor: '#D7D7D7',
-          height: 80,
+          height: (winHeight * 0.2) / 1.8,
           justifyContent: 'center',
         }}>
         {/* <View
@@ -224,13 +226,12 @@ const PhoneScreenView = props => {
         renderItem={_renderNumberItem}
         showsVerticalScrollIndicator={false}
         ListHeaderComponent={
-          <View>
+          <View style={{height:winHeight * 0.4/2,justifyContent:"center",}}>
             <View
               style={{
                 alignItems: 'center',
                 marginVertical: '10%',
                 marginHorizontal: 10,
-                marginTop: 2,
               }}></View>
             <Input
               inputStyle={{
@@ -238,7 +239,7 @@ const PhoneScreenView = props => {
                 fontSize: 25,
                 fontWeight: 'bold',
               }}
-              inputContainerStyle={{borderBottomWidth: 0, height: 50}}
+              inputContainerStyle={{borderBottomWidth: 0, height: winHeight * 0.2/1.8}}
               containerStyle={{borderWidth: 0}}
               value={number}
               placeholder="please enter number"
@@ -261,7 +262,7 @@ const PhoneScreenView = props => {
             style={{
               width: '100%',
               paddingHorizontal: 16,
-              marginTop: 20,
+              marginTop: "8%",
               flexDirection: 'row',
               alignItems: 'center',
               justifyContent: 'center',
@@ -299,7 +300,11 @@ const PhoneScreenView = props => {
         }
       />
       <View
-        style={{justifyContent: 'center', alignItems: 'center', marginBottom: 20}}>
+        style={{
+          justifyContent: 'center',
+          alignItems: 'center',
+          marginBottom: "5%",
+        }}>
         <TouchableOpacity>
           <Text style={{color: '#99A0BA'}}>Create New Contact</Text>
         </TouchableOpacity>

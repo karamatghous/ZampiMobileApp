@@ -17,6 +17,8 @@ import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 import com.reactnativecommunity.art.ARTPackage;
 // @react-native-community/masked-view
 import org.reactnative.maskedview.RNCMaskedViewPackage;
+// @react-native-community/slider
+import com.reactnativecommunity.slider.ReactSliderPackage;
 // @react-native-firebase/analytics
 import io.invertase.firebase.analytics.ReactNativeFirebaseAnalyticsPackage;
 // @react-native-firebase/app
@@ -105,6 +107,7 @@ public class PackageList {
       new AsyncStoragePackage(),
       new ARTPackage(),
       new RNCMaskedViewPackage(),
+      new ReactSliderPackage(),
       new ReactNativeFirebaseAnalyticsPackage(),
       new ReactNativeFirebaseAppPackage(),
       new ReactNativeFirebaseAuthPackage(),

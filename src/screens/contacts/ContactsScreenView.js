@@ -5,6 +5,7 @@ import {
   SafeAreaView,
   StatusBar,
   FlatList,
+  Dimensions,
   ActivityIndicator,
 } from 'react-native';
 import {Avatar, Input} from 'react-native-elements';
@@ -31,6 +32,8 @@ const ContactsScreenView = props => {
     onContactPressed,
     user,
   } = props;
+  const winHeight = Dimensions.get('window').height;
+
 
   console.log(props, 'props');
   const [loading, setLoading] = useState(false);
@@ -119,18 +122,18 @@ const ContactsScreenView = props => {
     );
   }
   const _renderContactItem = ({item, index}) => {
-    console.log(item, 'this is contact item');
     return (
       <View
         style={{
           borderWidth: 0.2,
           width: "90%",
-          height: 96,
+          height: winHeight * 0.3 / 2.3,
           borderRadius: 4,
           borderColor: '#D7D7D7',
           justifyContent: 'center',
           alignItems: 'center',
           alignSelf: 'center',
+
         }}>
         <TouchableOpacity
           style={{marginHorizontal: 12, flexDirection: 'row'}}
@@ -269,16 +272,26 @@ const ContactsScreenView = props => {
           searchIcon={{size: 27, color: 'grey'}}
           onChangeText={text => searchFilterFunction(text)}
           onClear={text => searchFilterFunction(text)}
-          placeholder="Search Contacts.."
+          placeholder="Search Contacts"
+        
+          placeholderTextColor="grey"
+          color="grey"
           value={search}
           containerStyle={{
             backgroundColor: 'white',
             borderWidth: 0.1,
-            borderRadius: 6,
+            borderRadius: 13,
+            borderRightWidth:0.2,
+            borderLeftWidth:0.2,
+            borderEndColor:"grey",
+            
             // borderColor: '#E5E5E5',
             // borderWidth: 0.2,
-            height: 34,
+            height: winHeight * 0.2/3.2,
             justifyContent: 'center',
+            alignItems:"center",
+            alignSelf:"center",
+            width:"95%"
           }}
         />
       </View>

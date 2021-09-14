@@ -241,7 +241,7 @@ const SmsListScreenView = props => {
             borderWidth: 0.2,
             borderRadius: 8,
             borderColor: '#757575',
-            width: 370,
+            width: "95%",
           }}
           placeholderTextColor={'#757575'}
           placeholder={'Search Chats'}
