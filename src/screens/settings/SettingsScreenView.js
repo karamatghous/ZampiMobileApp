@@ -10,6 +10,8 @@ import {
   Platform,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import {RFValue, RFPercentage} from 'react-native-responsive-fontsize';
+
 import Collapsible from 'react-native-collapsible';
 import _ from 'lodash';
 
@@ -117,15 +119,17 @@ const SettingsScreenView = props => {
             ItemSeparatorComponent={() => <View style={{height: 10}} />}
           />
         </Collapsible>
-        <TouchableOpacity
-          style={{paddingTop: 20, position: 'relative'}}
-          onPress={() => createTwoButtonAlert()}>
-          <CustomText
-            subHeader
-            style={{paddingHorizontal: 20}}
-            displayText={'LogOut'}
-          />
-        </TouchableOpacity>
+        <View style={{marginTop:RFPercentage(70),justifyContent:"center",alignItems:"center",backgroundColor:colors.adminColor,}}>
+          <TouchableOpacity
+            style={{alignItems:"center",height:"35%"}}
+            onPress={() => createTwoButtonAlert()}>
+            <CustomText
+              subHeader
+              style={{paddingHorizontal: 20}}
+              displayText={'LogOut'}
+            />
+          </TouchableOpacity>
+        </View>
       </View>
     </SafeAreaView>
   );

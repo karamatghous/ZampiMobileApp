@@ -238,7 +238,7 @@ const SmsListScreenView = props => {
           inputStyle={{fontSize: 16}}
           inputContainerStyle={{borderBottomWidth: 0}}
           containerStyle={{
-            borderWidth: 0.2,
+            borderWidth: 0.3,
             borderRadius: 8,
             borderColor: '#757575',
             width: "95%",

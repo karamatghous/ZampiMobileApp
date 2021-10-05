@@ -23,7 +23,7 @@ export default {
   primaryText: "#212121",
   secondaryText: "#7F7F7F",
   tertiaryText: "#b7b7b7",
-  adminColor: "#e8ab00",
+  adminColor: "#f16f1b",
   adminBg: "#F1FFF9",
   headerBg: "#444444",
   groupBg: "#F6F6F6",
@@ -42,7 +42,8 @@ export default {
   blueGray: "#607D8B",
   whatsAppBg: '#E5DDD5',
   backBg: '#cccccc',
-  inputBg: "#f2f5fc"
+  inputBg: "#f2f5fc",
+  borderColor:"#E0E0E0"
 };
 
 export const chartPalette = {
