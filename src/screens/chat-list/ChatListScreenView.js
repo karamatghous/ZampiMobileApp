@@ -122,7 +122,7 @@ const ChatListScreenView = props => {
                 <Input
                     inputStyle={{ fontSize: 16 }}
                     inputContainerStyle={{ borderBottomWidth: 0 }}
-                    containerStyle={{ borderWidth: 1, borderRadius: 10, borderColor: '#757575' }}
+                    containerStyle={{ borderWidth: 1, borderRadius: 10, borderColor: colors.borderColor }}
                     placeholderTextColor={'#757575'}
                     placeholder={'Search Chats'}
                     value={searchValue}

@@ -10,7 +10,7 @@ import {
   Text,
   Modal,
   ScrollView,
-  TextInput
+  TextInput,
 } from 'react-native';
 import {RFValue, RFPercentage} from 'react-native-responsive-fontsize';
 
@@ -156,7 +156,7 @@ const PhoneScreenView = props => {
       <View
         style={{
           borderWidth: 0.5,
-          borderColor: '#D7D7D7',
+          borderColor: colors.borderColor,
           height: (winHeight * 0.2) / 1.8,
           justifyContent: 'center',
         }}>
@@ -180,14 +180,14 @@ const PhoneScreenView = props => {
           onLongPress={() => onNumberLongPressed(item)}>
           <CustomText
             style={{
-              fontSize: 25,
+              fontSize: RFValue(25),
               fontWeight: 'bold',
               // paddingBottom:18
             }}
             displayText={item}
           />
           {item == 0 ? (
-            <CustomText style={{fontSize: 20}} displayText={'+'} />
+            <CustomText style={{fontSize:RFValue (20)}} displayText={'+'} />
           ) : null}
         </TouchableOpacity>
 
@@ -224,8 +224,10 @@ const PhoneScreenView = props => {
       {state === true ? (
         <View style={{}}>
           <Modal animationType="slide" transparent={false} visible={state}>
-            <SafeAreaView>
+            <SafeAreaView >
               <ScrollView
+              alwaysBounceVertical={true}
+              contentContainerStyle={{height:"130%"}}
                 style={{
                   height: winHeight * 1,
                   backgroundColor: colors.adminColor,
@@ -383,7 +385,7 @@ const PhoneScreenView = props => {
                       justifyContent: 'center',
                       alignSelf: 'center',
                       borderRadius: 4,
-                      borderColor: 'grey',
+                      borderColor: colors.borderColor,
                       borderWidth: 0.3,
                     }}>
                     <Text style={{fontSize: RFValue(23), color: 'grey'}}>
@@ -414,21 +416,21 @@ const PhoneScreenView = props => {
                   height: (winHeight * 0.4) / 2,
                   justifyContent: 'center',
                 }}>
-                <View
+                {/* <View
                   style={{
                     alignItems: 'center',
                     marginVertical: '10%',
                     marginHorizontal: 10,
-                  }}></View>
+                  }}></View> */}
                 <Input
                   inputStyle={{
                     textAlign: 'center',
-                    fontSize: 25,
+                    fontSize: RFValue(25),
                     fontWeight: 'bold',
                   }}
                   inputContainerStyle={{
                     borderBottomWidth: 0,
-                    height: (winHeight * 0) / 1.8,
+                    height: (winHeight * 0.2) / 1.8,
                   }}
                   containerStyle={{borderWidth: 0}}
                   value={number}
@@ -440,7 +442,7 @@ const PhoneScreenView = props => {
                         onPress={onDeleteButton}
                         style={{marginRight: 2}}
                         name={'delete'}
-                        size={24}
+                        size={RFValue(22)}
                       />
                     ) : null
                   }
@@ -461,14 +463,18 @@ const PhoneScreenView = props => {
                   style={{
                     backgroundColor: '#61ce70',
                     width: '70%',
-                    height: winHeight*0.1/1.3,
+                    height: (winHeight * 0.1) / 1.3,
                     alignItems: 'center',
                     justifyContent: 'center',
                     borderRadius: 4,
                   }}
                   onPress={onCallPress}>
                   <CustomText
-                    style={{fontSize: 20, fontWeight: 'bold', color: 'white'}}
+                    style={{
+                      fontSize: RFValue(20),
+                      fontWeight: 'bold',
+                      color: 'white',
+                    }}
                     displayText={call ? 'END' : 'CALL'}
                   />
                 </TouchableOpacity>
@@ -496,7 +502,7 @@ const PhoneScreenView = props => {
               marginBottom: '5%',
             }}>
             <TouchableOpacity onPress={() => setState(!state)}>
-              <Text style={{color: '#99A0BA'}}>Create New Contact</Text>
+              <Text style={{color: '#99A0BA',fontSize:RFValue(15)}}>Create New Contact</Text>
             </TouchableOpacity>
           </View>
         </SafeAreaView>
@@ -520,7 +526,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 0.3,
     paddingLeft: 8,
-    borderColor: 'grey',
+    borderColor: colors.borderColor,
     // justifyContent:"flex-start"
   },
   country: {

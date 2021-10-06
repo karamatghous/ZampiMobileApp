@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">284084863679-g892baqr0adbgjrrnnk27irp7f4ilcb8.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://zampi-notifications.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">284084863679</string>
+    <string name="google_api_key" translatable="false">AIzaSyBX6Xh3UuGDKQ5mQcM_QJUOv_vWRpEs3XA</string>
+    <string name="google_app_id" translatable="false">1:284084863679:android:09db1d0325f14b298f3c0a</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBX6Xh3UuGDKQ5mQcM_QJUOv_vWRpEs3XA</string>
+    <string name="google_storage_bucket" translatable="false">zampi-notifications.appspot.com</string>
+    <string name="project_id" translatable="false">zampi-notifications</string>
+</resources>

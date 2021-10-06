@@ -98,7 +98,7 @@ const SettingsScreenView = props => {
             name={
               isNotificationCollapsed ? 'caret-forward' : 'caret-down-sharp'
             }
-            size={20}
+            size={RFValue(20)}
           />
         </TouchableOpacity>
         <View
@@ -119,13 +119,26 @@ const SettingsScreenView = props => {
             ItemSeparatorComponent={() => <View style={{height: 10}} />}
           />
         </Collapsible>
-        <View style={{marginTop:RFPercentage(70),justifyContent:"center",alignItems:"center",backgroundColor:colors.adminColor,}}>
+        <View
+          style={{
+            // marginTop: '100%',
+            top: RFValue(450),
+            width: '90%',
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: colors.adminColor,
+            alignSelf: 'center',
+          }}>
           <TouchableOpacity
-            style={{alignItems:"center",height:"35%"}}
+            style={{
+              alignItems: 'center',
+              height: RFValue(40),
+              justifyContent: 'center',
+            }}
             onPress={() => createTwoButtonAlert()}>
             <CustomText
               subHeader
-              style={{paddingHorizontal: 20}}
+              // style={{paddingHorizontal: 20}}
               displayText={'LogOut'}
             />
           </TouchableOpacity>

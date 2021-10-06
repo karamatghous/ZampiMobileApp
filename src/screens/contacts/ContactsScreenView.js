@@ -83,12 +83,11 @@ const ContactsScreenView = props => {
   var filteredArrays = [];
 
   const searchFilterFunction = text => {
-    // Check if searched text is not blank
+    console.log(text, 'text');
     if (text) {
-      // Inserted text is not blank
-      // Filter the masterDataSource
-      // Update FilteredDataSource
       const newData = masterDataSource.filter(function (item) {
+        console.log(item, 'item');
+
         const itemData = item.fname
           ? item.fname.toUpperCase()
           : ''.toUpperCase();
@@ -98,8 +97,6 @@ const ContactsScreenView = props => {
       setState(newData);
       setSearch(text);
     } else {
-      // Inserted text is blank
-      // Update FilteredDataSource with masterDataSource
       setState(masterDataSource);
       setSearch(text);
     }
@@ -128,7 +125,7 @@ const ContactsScreenView = props => {
           // width: wp('90%'),
           // height: hp('10%'),
           borderRadius: 4,
-          borderColor: '#D7D7D7',
+          borderColor: colors.borderColor,
           justifyContent: 'center',
           alignItems: 'center',
           alignSelf: 'center',
@@ -139,13 +136,13 @@ const ContactsScreenView = props => {
           onPress={() => contact_Pressed(item, index)}>
           <View
             style={{
-              flex:1,
+              flex: 1,
               width: (winWidth * 0.08) / 1,
               justifyContent: 'center',
-              alignItems:"flex-start",
+              alignItems: 'flex-start',
               // alignSelf:"flex-start"
               // backgroundColor: 'blue',
-              paddingHorizontal:RFValue(7)
+              paddingHorizontal: RFValue(7),
             }}>
             <Avatar
               rounded
@@ -161,7 +158,8 @@ const ContactsScreenView = props => {
             />
           </View>
           <View
-            style={{width: (winWidth * 0.1) / 1.8, 
+            style={{
+              width: (winWidth * 0.1) / 1.8,
               // backgroundColor:"red"
 
               // paddingHorizontal:RFValue (12)
@@ -171,7 +169,7 @@ const ContactsScreenView = props => {
           {/*Name, Phone, email & Address */}
           <View
             style={{
-              width: "80%",
+              width: '80%',
               justifyContent: 'center',
               marginTop: RFValue(9),
               // backgroundColor:"red"
@@ -198,11 +196,11 @@ const ContactsScreenView = props => {
                 style={{
                   flexDirection: 'row',
                   alignItems: 'center',
-                  width: '50%',
+                  width: '43%',
                   paddingRight: 5,
                 }}>
                 <Foundation
-                  style={{color: colors.iconcolor, width: '14%', marginTop: 2}}
+                  style={{color: colors.adminColor, width: '14%', marginTop: 2}}
                   name="telephone"
                   size={RFValue(18)}
                 />
@@ -217,11 +215,12 @@ const ContactsScreenView = props => {
                 style={{
                   flexDirection: 'row',
                   alignItems: 'center',
-                  width: '50%',
+                  width: '55%',
                   paddingLeft: 5,
+                  // backgroundColor:"red"
                 }}>
                 <Foundation
-                  style={{color: colors.iconcolor, width: '16%'}}
+                  style={{color: colors.adminColor, width: '16%'}}
                   name="mail"
                   size={RFValue(18)}
                 />
@@ -242,7 +241,7 @@ const ContactsScreenView = props => {
                 marginBottom: '5%',
               }}>
               <Entypo
-                style={{color: colors.iconcolor, width: '10%'}}
+                style={{color: colors.adminColor, width: '10%'}}
                 name="address"
                 size={RFValue(18)}
               />

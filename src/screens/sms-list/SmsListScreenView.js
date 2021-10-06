@@ -7,9 +7,13 @@ import {
   FlatList,
   RefreshControl,
   Text,
+  Dimensions,
 } from 'react-native';
 import {Avatar, Input} from 'react-native-elements';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import {SearchBar} from 'react-native-elements/dist/searchbar/SearchBar';
+import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
+
 const axios = require('axios');
 import moment from 'moment';
 
@@ -49,8 +53,13 @@ const SmsListScreenView = props => {
   console.log(props, 'list msg screen props');
   const [loading, setLoading] = useState(false);
   const [Onloading, setOnLoading] = useState(false);
+  const [search, setSearch] = useState('');
+  const [value, setValue] = useState();
+  const [masterDataSource, setMasterDataSource] = useState([]);
 
   const [state, setState] = useState();
+  const winHeight = Dimensions.get('window').height;
+  const winWidth = Dimensions.get('window').width;
   useEffect(() => {
     ApiContact();
   }, [incomingMessages]);
@@ -76,6 +85,7 @@ const SmsListScreenView = props => {
       .then(async json => {
         setLoading(false);
         setState(json.contacts);
+        setMasterDataSource(json.contacts);
         setOnLoading(false);
         return;
       })
@@ -110,7 +120,22 @@ const SmsListScreenView = props => {
         return console.log(error, 'error');
       });
   };
-
+  const searchFilterFunction = text => {
+    if (text) {
+      const newData = masterDataSource.filter(function (item) {
+        const itemData = item.fname
+          ? item.fname.toUpperCase()
+          : ''.toUpperCase();
+        const textData = text.toUpperCase();
+        return itemData.indexOf(textData) > -1;
+      });
+      setState(newData);
+      setSearch(text);
+    } else {
+      setState(masterDataSource);
+      setSearch(text);
+    }
+  };
   const _renderChatListItem = ({item, index}) => {
     // var messageHistory = channels[item];
     // var lastTIme = messageHistory[0].dateSent
@@ -121,7 +146,6 @@ const SmsListScreenView = props => {
     return (
       <View
         style={{
-         
           justifyContent: 'center',
           alignItems: 'center',
           alignSelf: 'center',
@@ -143,10 +167,11 @@ const SmsListScreenView = props => {
               size={50}
             />
             <Badge
+            textStyle={{fontSize:RFValue(8)}}
               value={item.unseen}
               status="warning"
-              badgeStyle={{backgroundColor:"#53A8E2"}}
-              
+              badgeStyle={{backgroundColor: colors.adminColor,}}
+
               // badgeStyle={{width: 40, height: 20}}
             />
             {/* <Avatar
@@ -159,13 +184,13 @@ const SmsListScreenView = props => {
                 flexDirection: 'row',
                 alignItems: 'center',
                 width: '80%',
-                // justifyContent: 'center',
                 alignSelf: 'center',
               }}>
-              <View style={{marginLeft: 12, width: 120}}>
+              <View
+                style={{marginLeft: 12, width: '45%', }}>
                 <CustomText
                   subHeader
-                  style={{fontWeight: 'bold', fontSize: 18}}
+                  style={{fontWeight: 'bold', fontSize: RFValue(18)}}
                   displayText={item.fname + item.lname}
                   // displayText={
                   //   item == '+917598198955'
@@ -189,22 +214,32 @@ const SmsListScreenView = props => {
                 />
                 {/* {messageHistory[0].body ? ( */}
                 <CustomText
-                  style={{marginTop: 5, fontSize: 12}}
+                  style={{marginTop: 5, fontSize: RFValue(12)}}
                   title
                   displayText={'Hi There'}
                 />
                 {/* ) : null} */}
               </View>
+              <View>
+                <Text
+                  style={{
+                    marginLeft: RFValue(12),
+                    paddingBottom: RFValue(19),
+                    color: colors.adminColor,
+                    fontSize: RFValue(12),
+                  }}>
+                  2123851384
+                </Text>
+              </View>
+
               <Text
                 style={{
-                  marginLeft: 25,
-                  marginTop: -23,
-                  color: '#53A8E2',
-                  fontSize: 12,
+                  marginLeft: RFValue(12),
+                  paddingBottom: RFValue(19),
+                  color: colors.adminColor,
+                  fontSize: RFValue(12),
+                  color: '#99A0BA',
                 }}>
-                2123851384
-              </Text>
-              <Text style={{marginLeft: 10, marginTop: -23, color: '#99A0BA'}}>
                 2AM
               </Text>
 
@@ -233,15 +268,49 @@ const SmsListScreenView = props => {
       <StatusBar barStyle="dark-content" backgroundColor={colors.white} />
       <ActionBarMenuTitle navigation={navigation} title={'Messages'} />
 
-      <View style={{ paddingHorizontal: 10, marginVertical: 30,justifyContent:"center",alignItems:"center"}}>
-        <Input
+      <View
+        style={{
+          paddingHorizontal: 10,
+          marginVertical: 30,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <View
+          style={{width: '100%', paddingHorizontal: 10, marginVertical: 30}}>
+          <SearchBar
+            lightTheme
+            round={true}
+            searchIcon={{size: RFValue(27), color: 'grey'}}
+            onChangeText={text => searchFilterFunction(text)}
+            onClear={text => searchFilterFunction(text)}
+            placeholder="Search Contacts"
+            placeholderTextColor="grey"
+            color="grey"
+            value={search}
+            containerStyle={{
+              backgroundColor: 'white',
+              borderWidth: 0.3,
+              borderRadius: 13,
+              borderRightWidth: 0.3,
+              borderLeftWidth: 0.3,
+              borderEndColor: '#E0E0E0',
+              borderStartColor: '#E0E0E0',
+              height: (winHeight * 0.2) / 3.2,
+              justifyContent: 'center',
+              alignItems: 'center',
+              alignSelf: 'center',
+              width: '95%',
+            }}
+          />
+        </View>
+        {/* <Input
           inputStyle={{fontSize: 16}}
           inputContainerStyle={{borderBottomWidth: 0}}
           containerStyle={{
             borderWidth: 0.3,
             borderRadius: 8,
             borderColor: '#757575',
-            width: "95%",
+            width: '95%',
           }}
           placeholderTextColor={'#757575'}
           placeholder={'Search Chats'}
@@ -255,7 +324,7 @@ const SmsListScreenView = props => {
               size={28}
             />
           }
-        />
+        /> */}
       </View>
       {channels && Object.keys(channels).length > 0 ? (
         <>
@@ -278,7 +347,7 @@ const SmsListScreenView = props => {
                   return (
                     <View
                       style={{
-                        backgroundColor: "white",
+                        backgroundColor: 'white',
                         height: 1,
                         margin: 16,
                       }}

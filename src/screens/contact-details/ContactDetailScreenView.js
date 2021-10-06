@@ -109,7 +109,7 @@ const ContactDetailScreenView = props => {
           width: winWidth * 0.95,
           height: (winHeight * 0.5) / 3,
           borderWidth: 0.3,
-          borderColor: '#D7D7D7',
+          borderColor: colors.borderColor,
           alignSelf: 'center',
           borderRadius: 4,
           marginBottom: '2%',
@@ -124,7 +124,7 @@ const ContactDetailScreenView = props => {
             }}>
             <Foundation
               style={{
-                color: colors.iconcolor,
+                color: colors.adminColor,
                 width: '14%',
                 marginTop: '2%',
                 marginLeft: '4%',
@@ -147,7 +147,7 @@ const ContactDetailScreenView = props => {
               marginTop: '4%',
             }}>
             <Ionicons
-              style={{color: colors.iconcolor, width: '14%'}}
+              style={{color: colors.adminColor, width: '14%'}}
               name="calendar"
               size={RFValue (17)}
             />
@@ -454,7 +454,7 @@ const ContactDetailScreenView = props => {
         <View
           style={{
             borderWidth: 0.2,
-            borderColor: '#D7D7D7',
+            borderColor: colors.borderColor,
             width: '90%',
             height: 59,
             backgroundColor: '#FFFFFF',
@@ -488,7 +488,7 @@ const ContactDetailScreenView = props => {
           <View style={{marginLeft: 40}}>
             <View style={{marginTop: 5, flexDirection: 'row'}}>
               <Ionicons
-                style={{color: colors.iconcolor}}
+                style={{color: colors.adminColor}}
                 name="calendar"
                 size={RFValue (16)}
               />
@@ -496,7 +496,7 @@ const ContactDetailScreenView = props => {
             </View>
             <View style={{marginTop: 5, flexDirection: 'row'}}>
               <Ionicons
-                style={{color: colors.iconcolor}}
+                style={{color: colors.adminColor}}
                 name="time"
                 size={RFValue (16)}
               />
@@ -579,7 +579,7 @@ const ContactDetailScreenView = props => {
               <TouchableOpacity style={{flexDirection: 'row'}}>
                 <Foundation
                   style={{
-                    color: colors.iconcolor,
+                    color: colors.adminColor,
                     marginTop: 3,
                     marginRight: 5,
                   }}
@@ -599,7 +599,7 @@ const ContactDetailScreenView = props => {
               <TouchableOpacity style={{flexDirection: 'row'}}>
                 <Foundation
                   style={{
-                    color: colors.iconcolor,
+                    color: colors.adminColor,
                     marginTop: '3%',
                     marginRight: 5,
                   }}
@@ -625,7 +625,7 @@ const ContactDetailScreenView = props => {
               marginTop: 5,
             }}>
             <Entypo
-              style={{color: colors.iconcolor}}
+              style={{color: colors.adminColor}}
               name="price-ribbon"
               size={RFValue (13)}
             />
@@ -661,7 +661,6 @@ const ContactDetailScreenView = props => {
               style={{
                 marginLeft: 14,
                 width: "30%",
-                // height: "40%",
                 alignItems: 'center',
                 justifyContent: 'center',
                 alignSelf: 'center',

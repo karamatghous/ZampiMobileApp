@@ -24,6 +24,7 @@ import _ from 'lodash';
 import {CustomText} from '../../components';
 import {colors} from '../../styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {RFValue} from 'react-native-responsive-fontsize';
 
 const SmsScreenView = props => {
   const {
@@ -141,10 +142,11 @@ const SmsScreenView = props => {
             left: {
               backgroundColor: '#F8F9FA',
               borderRadius: 6,
+              
               left: 2,
             },
             right: {
-              backgroundColor: '#55C2DE',
+              backgroundColor: colors.adminColor,
               borderRadius: 6,
             },
           }}
@@ -314,7 +316,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 10,
     marginRight: 10,
-    backgroundColor: '#55C2DE',
+    backgroundColor: colors.adminColor,
     borderRadius: 50,
     width: 29.16,
     height: 29.16,
