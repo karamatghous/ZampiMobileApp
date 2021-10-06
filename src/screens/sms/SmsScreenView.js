@@ -303,9 +303,7 @@ const SmsScreenView = props => {
         isTyping={true}
         alwaysShowSend={true}
         showUserAvatar={true}
-        // renderTime={() => {
-        //   return null;
-        // }}
+       
       />
     </SafeAreaView>
   );
